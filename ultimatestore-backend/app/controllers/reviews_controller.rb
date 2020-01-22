@@ -4,18 +4,18 @@ class ReviewsController < ApplicationController
   def index
     @reviews = Review.all
 
-    render json: @reviews
+    render json: @reviews, status: 200
   end
 
   def show
-    render json: @review
+    render json: @review, status: 200
   end
 
   def create
     @review = Review.new(review_params)
 
     if @review.save
-      render json: @review, status: :created, location: @review
+      render json: @review, status: 200, location: @review
     else
       render json: @review.errors, status: :unprocessable_entity
     end
@@ -23,14 +23,16 @@ class ReviewsController < ApplicationController
 
   def update
     if @review.update(review_params)
-      render json: @review
+      render json: @review, status: 200
     else
       render json: @review.errors, status: :unprocessable_entity
     end
   end
 
   def destroy
+    @review = Review.find(params[:id])
     @review.destroy
+    render json: @review, status: 200
   end
 
   private

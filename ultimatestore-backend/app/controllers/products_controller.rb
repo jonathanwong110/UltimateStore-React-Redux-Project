@@ -4,18 +4,18 @@ class ProductsController < ApplicationController
   def index
     @products = Product.all
 
-    render json: @products
+    render json: @products, status: 200
   end
 
   def show
-    render json: @product
+    render json: @product, status: 200
   end
 
   def create
     @product = Product.new(product_params)
 
     if @product.save
-      render json: @product, status: :created, location: @product
+      render json: @product, status: 200, location: @product
     else
       render json: @product.errors, status: :unprocessable_entity
     end
@@ -23,14 +23,16 @@ class ProductsController < ApplicationController
 
   def update
     if @product.update(product_params)
-      render json: @product
+      render json: @product, status: 200
     else
       render json: @product.errors, status: :unprocessable_entity
     end
   end
 
   def destroy
+    @product = Product.find(params[:id])
     @product.destroy
+    render json: @product, status: 200
   end
 
   private
