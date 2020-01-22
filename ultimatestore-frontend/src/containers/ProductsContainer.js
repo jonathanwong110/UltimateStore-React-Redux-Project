@@ -1,5 +1,7 @@
 import React, { Component } from 'react'
 import Products from '../components/products/Products'
+import { fetchProducts } from '../actions/products'
+import { connect } from 'react-redux'
 
 class ProductsContainer extends Component {
 
@@ -12,6 +14,16 @@ class ProductsContainer extends Component {
   }
 }
 
-const mapStateToProps = ({ products }) => ({ products })
-
-export default (ProductsContainer)
+const mapStateToProps = state => {
+    return {
+      products: state.products,
+      loading: state.loading
+    }
+  }
+   
+  const mapDispatchToProps = dispatch => {
+    return {
+      fetchProducts: () => dispatch(fetchProducts())
+    }
+  }
+  export default connect(mapStateToProps, mapDispatchToProps)(ProductsContainer)
