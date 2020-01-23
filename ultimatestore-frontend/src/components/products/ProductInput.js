@@ -5,19 +5,16 @@ class ProductInput extends Component {
   constructor() {
     super()
     this.state = {
-      image: '',
+      title: '',
       price: '',
       description: '',
-      title: ''
+      image: ''
     }
   }
 
   handleChange = (e) => {
     this.setState({
-      image: e.target.value,
-      price: e.target.value,
-      description: e.target.value,
-      title: e.target.value
+        [e.target.name]: e.target.value
     });
   }
 
@@ -25,10 +22,10 @@ class ProductInput extends Component {
     e.preventDefault();
     this.props.addProduct(this.state.text)
     this.setState({
-        image: '',
+        title: '',
         price: '',
         description: '',
-        title: ''
+        image: ''
     });
   }
 
@@ -37,15 +34,30 @@ class ProductInput extends Component {
     return (
       <div>
         Product Input
-        <form onSubmit={this.handleSubmit}>
-          <input type="text" onChange={this.handleChange} value={this.state.image}>
-          </input>
-          <input type="text" onChange={this.handleChange} value={this.state.price}>
-          </input>
-          <input type="text" onChange={this.handleChange} value={this.state.description}>
-          </input>
-          <input type="text" onChange={this.handleChange} value={this.state.title}>
-          </input>
+        <form onSubmit={e => this.handleSubmit(e)}>
+        <br></br>
+          <label>
+              Title: 
+              <input type="text" onChange={e => this.handleChange(e)}></input> 
+          </label> 
+            <br></br>
+            <br></br>
+          <label>
+              Price: 
+              <input type="text" onChange={e => this.handleChange(e)}></input>
+          </label>
+            <br></br>
+            <br></br>
+          <label>
+              Description: <input type="text" onChange={e => this.handleChange(e)}></input> 
+          </label>
+            <br></br>
+            <br></br>
+          <label>
+              Image: <input type="text" onChange={e => this.handleChange(e)}></input> 
+          </label>
+            <br></br>
+            <br></br>
           <input type="submit"></input>
         </form>
       </div>
