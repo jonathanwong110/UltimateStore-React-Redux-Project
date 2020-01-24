@@ -10,7 +10,7 @@ class ProductsContainer extends Component {
     return (
       <div>
         <ProductInput addProduct={this.props.addProduct}/>
-        <Products products={this.props.products}/>
+        <Products fetchProducts={this.props.fetchProducts} products={this.props.products}/>
       </div>
     )
   }
@@ -19,7 +19,6 @@ class ProductsContainer extends Component {
 const mapStateToProps = state => {
     return {
       products: state.products,
-      loading: state.loading
     }
   }
    

@@ -59,7 +59,7 @@ class ProductInput extends Component {
           </label>
             <br></br>
             <br></br>
-          <input type="submit"></input>
+          <input type="submit" value="Create Product"></input>
         </form>
       </div>
     );

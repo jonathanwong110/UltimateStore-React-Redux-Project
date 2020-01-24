@@ -7,8 +7,12 @@ export default function manageProducts (state = {
         case 'LOADING_PRODUCTS':
             return {
                 ...state,
-                products: [...state.products],
-                loading: true
+                products: [...state.products]
+        }
+        case 'PRODUCTS_FETCHED':
+            return {
+                ...state,
+                products: action.products
         }
         case 'ADD_PRODUCT':
             action.product.id = uuid()
