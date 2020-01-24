@@ -3,14 +3,16 @@ import Products from '../components/products/Products'
 import ProductInput from '../components/products/ProductInput'
 import { fetchProducts } from '../actions/products'
 import { connect } from 'react-redux'
+import MainNav from '../components/products/MainNav'
 
 class ProductsContainer extends Component {
 
   render() {
     return (
       <div>
-        <ProductInput addProduct={this.props.addProduct}/>
-        <Products fetchProducts={this.props.fetchProducts} products={this.props.products}/>
+        <MainNav/>
+          <ProductInput addProduct={this.props.addProduct}/>
+          <Products fetchProducts={this.props.fetchProducts} products={this.props.products}/>
       </div>
     )
   }
