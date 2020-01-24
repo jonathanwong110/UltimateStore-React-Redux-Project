@@ -7,10 +7,10 @@ class Product extends Component {
     
     return (
       <div>
-        <img alt={product.id} src={product.image}> </img>
-        <h2 key={product.id}> {product.title} </h2>
-        <h3 key={product.id}> {product.price} </h3>
-        <p key={product.id}> {product.description} </p>
+        <img alt={product.id} src={product.image} height="100px" width="100px"/>
+        <h2> {product.title} </h2>
+        <h3> {product.price} </h3>
+        <p> {product.description} </p>
       </div>
     );
   }

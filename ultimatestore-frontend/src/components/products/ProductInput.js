@@ -20,13 +20,14 @@ class ProductInput extends Component {
 
   handleSubmit = (e) => {
     e.preventDefault();
-    this.props.addProduct(this.state.text)
+    const newProduct = {...this.state}
     this.setState({
         title: '',
         price: '',
         description: '',
         image: ''
     });
+    this.props.addProduct(newProduct)
   }
 
 
@@ -38,23 +39,23 @@ class ProductInput extends Component {
         <br></br>
           <label>
               Title: 
-              <input type="text" onChange={e => this.handleChange(e)}></input> 
+              <input type="text" name="title" onChange={e => this.handleChange(e)} value={this.state.title}></input> 
           </label> 
             <br></br>
             <br></br>
           <label>
               Price: 
-              <input type="text" onChange={e => this.handleChange(e)}></input>
+              <input type="text" name="price" onChange={e => this.handleChange(e)} value={this.state.price}></input>
           </label>
             <br></br>
             <br></br>
           <label>
-              Description: <input type="text" onChange={e => this.handleChange(e)}></input> 
+              Description: <input type="text" name="description" onChange={e => this.handleChange(e)} value={this.state.description}></input> 
           </label>
             <br></br>
             <br></br>
           <label>
-              Image: <input type="text" onChange={e => this.handleChange(e)}></input> 
+              Image: <input type="text" name="image" onChange={e => this.handleChange(e)} value={this.state.image}></input> 
           </label>
             <br></br>
             <br></br>

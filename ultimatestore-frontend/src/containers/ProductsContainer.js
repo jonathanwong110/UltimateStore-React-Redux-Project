@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-// import Products from '../components/products/Products'
+import Products from '../components/products/Products'
 import ProductInput from '../components/products/ProductInput'
 import { fetchProducts } from '../actions/products'
 import { connect } from 'react-redux'
@@ -9,8 +9,8 @@ class ProductsContainer extends Component {
   render() {
     return (
       <div>
-        {/* <Products products={this.props.products}/> */}
         <ProductInput addProduct={this.props.addProduct}/>
+        <Products products={this.props.products}/>
       </div>
     )
   }
@@ -26,7 +26,7 @@ const mapStateToProps = state => {
   const mapDispatchToProps = dispatch => {
     return {
       fetchProducts: () => dispatch(fetchProducts()),
-      addProduct: (image, title, price, description) => dispatch({ type: "ADD_PRODUCT", image, title, price, description }) 
+      addProduct: product => dispatch({ type: "ADD_PRODUCT", product }) 
     }
   }
   export default connect(mapStateToProps, mapDispatchToProps)(ProductsContainer)
