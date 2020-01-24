@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { Card, Button } from 'react-bootstrap';
 
 class Product extends Component {
 
@@ -6,12 +7,16 @@ class Product extends Component {
     const { product } = this.props;
     
     return (
-      <div>
-        <img alt={product.id} src={product.image} height="100px" width="100px"/>
-        <h2> {product.title} </h2>
-        <h3> {product.price} </h3>
-        <p> {product.description} </p>
-      </div>
+      <Card style={{ width: '15rem' }}>
+        <Card.Img variant="top" src={product.image}/>
+        <Card.Body>
+          <Card.Title>{product.title}</Card.Title>
+          <Card.Text>
+          ${product.price}
+          </Card.Text>
+          <Button variant="primary">Show Product</Button>
+        </Card.Body>
+      </Card>
     );
   }
 };
