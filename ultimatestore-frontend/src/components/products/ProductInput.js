@@ -41,26 +41,20 @@ class ProductInput extends Component {
               Title: 
               <input type="text" name="title" onChange={e => this.handleChange(e)} value={this.state.title}></input> 
           </label> 
-            <br></br>
-            <br></br>
           <label>
               Price: 
               <input type="text" name="price" onChange={e => this.handleChange(e)} value={this.state.price}></input>
           </label>
-            <br></br>
-            <br></br>
           <label>
               Description: <input type="text" name="description" onChange={e => this.handleChange(e)} value={this.state.description}></input> 
           </label>
-            <br></br>
-            <br></br>
           <label>
               Image: <input type="text" name="image" onChange={e => this.handleChange(e)} value={this.state.image}></input> 
           </label>
-            <br></br>
-            <br></br>
           <input type="submit" value="Create Product"></input>
         </form>
+        <br></br>
+        <br></br>
       </div>
     );
   }

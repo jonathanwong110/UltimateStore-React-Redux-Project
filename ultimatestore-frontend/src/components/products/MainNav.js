@@ -13,12 +13,12 @@ class MainNav extends Component {
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="mr-auto">
-              <Nav.Link href="#home">Home</Nav.Link>
-              <Nav.Link href="#home">Create a Product</Nav.Link>
               <NavDropdown title="Shop by Category" id="basic-nav-dropdown">
-                <NavDropdown.Item href="#action/3.1">Apparel</NavDropdown.Item>
-                <NavDropdown.Item href="#action/3.2">Shoes</NavDropdown.Item>
-                <NavDropdown.Item href="#action/3.3">Electronics</NavDropdown.Item>
+                <NavDropdown.Item>All</NavDropdown.Item>
+                <NavDropdown.Divider />
+                <NavDropdown.Item>Apparel</NavDropdown.Item>
+                <NavDropdown.Item>Shoes</NavDropdown.Item>
+                <NavDropdown.Item>Electronics</NavDropdown.Item>
               </NavDropdown>
             </Nav>
           </Navbar.Collapse>
