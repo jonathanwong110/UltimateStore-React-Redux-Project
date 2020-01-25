@@ -7,12 +7,12 @@ class Product extends Component {
     const { product } = this.props;
     
     return (
-      <Card style={{ width: '15rem' }}>
+      <Card style={{ width: '18rem' }}>
         <Card.Img variant="top" src={product.image}/>
         <Card.Body>
           <Card.Title>{product.title}</Card.Title>
           <Card.Text>
-          ${product.price}
+            ${product.price}
           </Card.Text>
           <Button variant="primary">Show Product</Button>
         </Card.Body>

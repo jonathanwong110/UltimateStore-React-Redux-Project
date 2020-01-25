@@ -4,7 +4,6 @@ export const fetchProducts = () => {
       fetch('http://localhost:3000/api/v1/products').then(response => {
         return response.json()
       }).then(responseJSON => {
-        console.log(responseJSON)
         dispatch({ type: 'PRODUCTS_FETCHED', products: responseJSON })
       })
     }

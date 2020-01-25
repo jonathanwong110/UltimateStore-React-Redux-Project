@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Product from './Product'
+import { CardDeck } from 'react-bootstrap';
 
 class Products extends Component {
 
@@ -9,11 +10,11 @@ class Products extends Component {
 
   render() {
     return (
-      <ul>
+      <CardDeck>
         {this.props.products.map(product => 
           <Product key={product.id} product={product}/>
         )}
-      </ul>
+      </CardDeck>
     );
   }
 };
