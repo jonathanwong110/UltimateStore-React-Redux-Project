@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import axios from 'axios'
 
 class ProductInput extends Component {
 
@@ -21,6 +22,7 @@ class ProductInput extends Component {
   handleSubmit = (e) => {
     e.preventDefault();
     const newProduct = {...this.state}
+    axios.post('http://localhost:3000/api/v1/products', newProduct)
     this.setState({
         title: '',
         price: '',
