@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
-import { Card, Button } from 'react-bootstrap';
+import { Card } from 'react-bootstrap';
+import ShowProduct from './ShowProduct'
 
 class Product extends Component {
 
@@ -14,7 +15,7 @@ class Product extends Component {
           <Card.Text>
             ${product.price}
           </Card.Text>
-          <Button variant="primary">Show Product</Button>
+          <ShowProduct product={product}></ShowProduct>
         </Card.Body>
       </Card>
     );
