@@ -18,7 +18,7 @@ function DisplayProduct(props) {
 
       <Modal show={show} onHide={handleClose} animation={false}>
         <Modal.Header closeButton>
-          <Modal.Title>Showing {products.product.title}</Modal.Title>
+          <Modal.Title><h1>{products.product.title}</h1></Modal.Title>
         </Modal.Header>
         <Modal.Body>
           <img 
@@ -27,8 +27,8 @@ function DisplayProduct(props) {
           <br></br>
           <h2>${products.product.price}</h2>
           <br></br>
-          <h4>Reviews: </h4> {products.product.reviews.map(review => 
-          <ul>
+          <h3>Reviews: </h3> {products.product.reviews.map(review => 
+          <ul key={products.product.id}>
             <li>
               {review.content}
             </li>
@@ -36,10 +36,13 @@ function DisplayProduct(props) {
           )}
         </Modal.Body>
         <Modal.Footer>
-          <Button variant="secondary" onClick={handleClose}>
+          <Button variant="dark" onClick={handleClose}>
             Close
           </Button>
-          <Button variant="primary" onClick={handleClose}>
+          <Button variant="danger" onClick={() => props.products.deleteProduct(products.product.id)}>
+            Delete Product
+          </Button>
+          <Button variant="success" onClick={handleClose}>
             Save Changes
           </Button>
         </Modal.Footer>

@@ -16,7 +16,13 @@ export default function manageProducts (state = {
         }
         case 'ADD_PRODUCT':
             action.product.id = uuid()
-            return {...state, products: [...state.products, action.product]}
+            return {
+                ...state, products: [...state.products, action.product]
+        }
+        case 'DELETE_PRODUCT':
+            return {
+                ...state, products: state.products.filter(product => product.id !== action.id)
+        }
         default:
             return state
     }

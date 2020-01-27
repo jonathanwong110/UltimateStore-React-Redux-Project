@@ -12,7 +12,7 @@ class ProductsContainer extends Component {
       <div>
         <MainNav/>
           <ProductInput addProduct={this.props.addProduct}/>
-          <Products fetchProducts={this.props.fetchProducts} products={this.props.products}/>
+          <Products fetchProducts={this.props.fetchProducts} products={this.props.products} deleteProduct={this.props.deleteProduct}/>
       </div>
     )
   }
@@ -24,10 +24,12 @@ const mapStateToProps = state => {
     }
   }
    
-  const mapDispatchToProps = dispatch => {
-    return {
-      fetchProducts: () => dispatch(fetchProducts()),
-      addProduct: product => dispatch({ type: "ADD_PRODUCT", product }) 
-    }
+const mapDispatchToProps = dispatch => {
+  return {
+    fetchProducts: () => dispatch(fetchProducts()),
+    addProduct: product => dispatch({ type: "ADD_PRODUCT", product }),
+    deleteProduct: id => dispatch({ type: "DELETE_PRODUCT", id }),
   }
-  export default connect(mapStateToProps, mapDispatchToProps)(ProductsContainer)
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(ProductsContainer)
