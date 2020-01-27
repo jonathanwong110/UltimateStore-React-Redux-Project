@@ -17,7 +17,7 @@ class Product extends Component {
     const { product } = this.props;
     
     return (
-      <Card key={product.id} style={{ width: '15rem' }}>
+      <Card style={{ width: '15rem' }}>
         <Card.Img variant="top" src={product.image} height="200px" width="auto"/>
         <Card.Body>
           <Card.Title>{product.title}</Card.Title>

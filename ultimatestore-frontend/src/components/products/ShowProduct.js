@@ -28,7 +28,7 @@ function DisplayProduct(props) {
           <h2>${products.product.price}</h2>
           <br></br>
           <h3>Reviews: </h3> {products.product.reviews.map(review => 
-          <ul key={products.product.id}>
+          <ul key={review.id}>
             <li>
               {review.content}
             </li>
@@ -39,7 +39,7 @@ function DisplayProduct(props) {
           <Button variant="dark" onClick={handleClose}>
             Close
           </Button>
-          <Button variant="danger" onClick={() => props.products.deleteProduct(products.product.id)}>
+          <Button variant="danger" onClick={() => products.deleteProduct(products.product.id)}>
             Delete Product
           </Button>
           <Button variant="success" onClick={handleClose}>
