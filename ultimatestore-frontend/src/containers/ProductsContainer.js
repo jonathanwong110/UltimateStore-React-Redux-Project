@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import Products from '../components/products/Products'
 import ProductInput from '../components/products/ProductInput'
-import { fetchProducts } from '../actions/products'
+import { fetchProducts, deleteProduct, addProduct } from '../actions/products'
 import { connect } from 'react-redux'
 import MainNav from '../components/products/MainNav'
 
@@ -27,8 +27,8 @@ const mapStateToProps = state => {
 const mapDispatchToProps = dispatch => {
   return {
     fetchProducts: () => dispatch(fetchProducts()),
-    addProduct: product => dispatch({ type: "ADD_PRODUCT", product }),
-    deleteProduct: id => dispatch({ type: "DELETE_PRODUCT", id }),
+    addProduct: (product) => dispatch(addProduct(product)),
+    deleteProduct: (id) => dispatch(deleteProduct(id)),
   }
 }
 
