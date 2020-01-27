@@ -15,7 +15,7 @@ class Products extends Component {
           <Row>
               {this.props.products.map(product => 
                 <Col xs="4" md="4">
-                  <Product product={product} deleteProduct={this.props.deleteProduct}/>
+                  <Product key={product.id} product={product} deleteProduct={this.props.deleteProduct}/>
                 </Col>
               )}
           </Row>
