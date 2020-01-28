@@ -15,7 +15,7 @@ function DisplayProduct(props) {
       <Button variant="primary" onClick={handleShow}>
         Show Product
       </Button>
-
+    
       <Modal show={show} onHide={handleClose} animation={false}>
         <Modal.Header closeButton>
           <Modal.Title>
@@ -29,29 +29,24 @@ function DisplayProduct(props) {
           <br></br>
           <h2>${products.product.price}</h2>
           <br></br>
-          <h3>Reviews: </h3> 
-          {products.product.reviews.map(review => {
-            if (products.product.reviews !== "") {
-              return (
-                <>
+          <h3>Reviews: </h3>
+          {products.product.reviews.length > 0 ?
+              products.product.reviews.map(review => {
+                return (
                   <ul key={review.id}>
                     <li>
                       {review.content}
                     </li>
                   </ul>
-                </>
-              )
-            } else {
-              return (
-                <>
-                  <p>
-                    Write a Review!
-                  </p>
-                </>
-                )
-              }
-            }
-          )}
+                )  
+              })
+            :
+              <>
+                <p>
+                  No Reviews so far!
+                </p>
+              </>
+          }
         </Modal.Body>
         <Modal.Footer>
           <Button variant="dark" onClick={handleClose}>

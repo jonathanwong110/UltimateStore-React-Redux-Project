@@ -4,6 +4,7 @@ class ProductSearch extends React.Component {
 
     constructor(props) {
         super(props);
+        
         this.state = {
         searchEntry: '',
         loading: false
@@ -36,8 +37,6 @@ class ProductSearch extends React.Component {
             </div>
         )
     }
-
-
 }
 
 export default ProductSearch
