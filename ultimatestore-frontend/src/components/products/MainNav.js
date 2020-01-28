@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
-import { Navbar, Nav, Form, FormControl, Button, NavDropdown } from 'react-bootstrap';
+import { Navbar, Nav, NavDropdown } from 'react-bootstrap';
+import ProductSearch from './ProductSearch'
 
 class MainNav extends Component {
 
@@ -17,10 +18,7 @@ class MainNav extends Component {
             <NavDropdown.Item>Miscellaneous</NavDropdown.Item>
           </NavDropdown>
           </Nav>
-          <Form inline>
-            <FormControl type="text" placeholder="Search for a Product" className="mr-sm-2" />
-            <Button variant="outline-info">Search</Button>
-          </Form>
+          <ProductSearch/>
         </Navbar>
       </>
     )
