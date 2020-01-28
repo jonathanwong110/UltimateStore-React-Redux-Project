@@ -18,7 +18,9 @@ function DisplayProduct(props) {
 
       <Modal show={show} onHide={handleClose} animation={false}>
         <Modal.Header closeButton>
-          <Modal.Title><h1>{products.product.title}</h1></Modal.Title>
+          <Modal.Title>
+            <h1>{products.product.title}</h1>
+          </Modal.Title>
         </Modal.Header>
         <Modal.Body>
           <img 
@@ -27,12 +29,28 @@ function DisplayProduct(props) {
           <br></br>
           <h2>${products.product.price}</h2>
           <br></br>
-          <h3>Reviews: </h3> {products.product.reviews.map(review => 
-          <ul key={review.id}>
-            <li>
-              {review.content}
-            </li>
-          </ul>
+          <h3>Reviews: </h3> 
+          {products.product.reviews.map(review => {
+            if (products.product.reviews !== "") {
+              return (
+                <>
+                  <ul key={review.id}>
+                    <li>
+                      {review.content}
+                    </li>
+                  </ul>
+                </>
+              )
+            } else {
+              return (
+                <>
+                  <p>
+                    Write a Review!
+                  </p>
+                </>
+                )
+              }
+            }
           )}
         </Modal.Body>
         <Modal.Footer>
