@@ -1,6 +1,5 @@
 import React, {Component} from 'react';
 import { Navbar, Nav, NavDropdown } from 'react-bootstrap';
-// import ProductSearch from './ProductSearch'
 
 class MainNav extends Component {
 
@@ -18,7 +17,6 @@ class MainNav extends Component {
             <NavDropdown.Item>Miscellaneous</NavDropdown.Item>
           </NavDropdown>
           </Nav>
-          {/* <ProductSearch/> */}
         </Navbar>
       </>
     )

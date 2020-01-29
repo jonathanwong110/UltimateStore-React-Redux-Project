@@ -14,7 +14,7 @@ class Products extends Component {
   }
 
   componentDidMount() {
-    this.props.fetchProducts(this.props.products)
+    this.props.fetchProducts()
   }
 
   handleChange = (e) => {
@@ -25,11 +25,10 @@ class Products extends Component {
 
   handleSubmit = (e) => {
       e.preventDefault()
-      this.props.fetchProducts(this.state.searchEntry)
-      console.log('this.componentDidMount', this.componentDidMount(this.state.searchEntry))
   }
 
   render() {
+    const filteredProducts = this.props.products.filter(product => product.title.toLowerCase().includes(this.state.searchEntry))
     return (
       <CardDeck>
         <Container>
@@ -46,7 +45,7 @@ class Products extends Component {
             </div>
             <br></br>
           <Row>
-              {this.props.products.map(product => 
+              {filteredProducts.map(product => 
                 <Col key={product.id} xs="4" md="4">
                   <Product key={product.id} product={product} deleteProduct={this.props.deleteProduct}/>
                 </Col>

@@ -4,15 +4,6 @@ import ShowProduct from './ShowProduct'
 
 class Product extends Component {
 
-  constructor(props) {
-    super(props)
-    this.state = {
-      isModalOpen: false,
-      modalProduct: undefined,
-      products: this.props
-    }
-  }
-
   render() {
     const { product } = this.props;
     
@@ -24,7 +15,7 @@ class Product extends Component {
           <Card.Text>
             ${product.price}
           </Card.Text>
-          <ShowProduct onClick={() => this.setState({ isModalOpen: true, modalProduct: product })} products={this.props}/>
+          <ShowProduct products={this.props}/>
         </Card.Body>
       </Card>
     );
