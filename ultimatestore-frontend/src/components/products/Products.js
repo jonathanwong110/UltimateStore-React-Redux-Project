@@ -4,13 +4,13 @@ import { CardDeck, Container, Row, Col } from 'react-bootstrap';
 
 class Products extends Component {
 
-    constructor(props) {
-      super(props);
-      
-      this.state = {
-      searchEntry: '',
-      loading: false
-      }
+  constructor(props) {
+    super(props);
+    
+    this.state = {
+    searchEntry: '',
+    loading: false
+    }
   }
 
   componentDidMount() {
@@ -18,17 +18,19 @@ class Products extends Component {
   }
 
   handleChange = (e) => {
-      this.setState({
-          searchEntry: e.target.value.toLowerCase(), loading: true
-      })
+    this.setState({
+        searchEntry: e.target.value.toLowerCase(), loading: true
+    })
   }
 
   handleSubmit = (e) => {
-      e.preventDefault()
+    e.preventDefault()
   }
 
   render() {
+    
     const filteredProducts = this.props.products.filter(product => product.title.toLowerCase().includes(this.state.searchEntry))
+
     return (
       <CardDeck>
         <Container>

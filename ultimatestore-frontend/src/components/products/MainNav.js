@@ -4,6 +4,7 @@ import { Navbar, Nav, NavDropdown } from 'react-bootstrap';
 class MainNav extends Component {
 
   render() {
+    
     return (
       <>
         <Navbar bg="dark" variant="dark">
