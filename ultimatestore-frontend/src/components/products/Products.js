@@ -8,8 +8,8 @@ class Products extends Component {
     super(props);
     
     this.state = {
-    searchEntry: '',
-    loading: false
+      searchEntry: '',
+      loading: false
     }
   }
 
