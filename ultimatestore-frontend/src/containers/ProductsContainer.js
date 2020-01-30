@@ -3,7 +3,7 @@ import Products from '../components/products/Products'
 import ProductInput from '../components/products/ProductInput'
 import { fetchProducts, deleteProduct, addProduct } from '../actions/products'
 import { connect } from 'react-redux'
-import MainNav from '../components/products/MainNav'
+import MainNav from '../components/MainNav'
 
 class ProductsContainer extends Component {
 
