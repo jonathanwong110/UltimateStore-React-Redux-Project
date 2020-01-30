@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import Cart from '../components/Cart'
 import { connect } from 'react-redux'
+import { addToCart, removeFromCart } from '../actions/cartActions'
 
 class CartContainer extends Component {
 
@@ -21,7 +22,7 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
   return {
-    addtoCart: (id) => dispatch(addProduct(id)),
+    addToCart: (id) => dispatch(addToCart(id)),
     removeFromCart: (id) => dispatch(removeFromCart(id))
   }
 }
