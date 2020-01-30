@@ -57,7 +57,7 @@ function DisplayProduct(props) {
             Delete Product
           </Button>
           <Button variant="success" onClick={handleClose}>
-            Save Changes
+            Add to Cart
           </Button>
         </Modal.Footer>
       </Modal>

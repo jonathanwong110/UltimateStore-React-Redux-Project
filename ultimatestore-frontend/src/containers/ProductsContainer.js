@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import Products from '../components/products/Products'
 import ProductInput from '../components/products/ProductInput'
-import { fetchProducts, deleteProduct, addProduct } from '../actions/products'
+import { fetchProducts, deleteProduct, addProduct } from '../actions/productsActions'
 import { connect } from 'react-redux'
 import MainNav from '../components/MainNav'
 
