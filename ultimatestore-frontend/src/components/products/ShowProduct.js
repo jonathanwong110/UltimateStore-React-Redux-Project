@@ -20,16 +20,16 @@ function DisplayProduct(props) {
       <Modal show={show} onHide={handleClose} animation={false}>
         <Modal.Header closeButton>
           <Modal.Title>
-            <h1>{products.product.title}</h1>
+            <img 
+            alt={products.product.id} src={products.product.image} height="300px" width="300px">
+          </img>
           </Modal.Title>
         </Modal.Header>
         <Modal.Body>
-          <img 
-            alt={products.product.id} src={products.product.image} height="300px" width="300px">
-          </img> 
-          <br></br>
+          <h1>{products.product.title}</h1> 
+            <br></br>
           <h2>${products.product.price}</h2>
-          <br></br>
+            <br></br>
           <h3>Reviews: </h3>
           {products.product.reviews.length > 0 ?
               products.product.reviews.map(review => {
