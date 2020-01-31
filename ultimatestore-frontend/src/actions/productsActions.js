@@ -1,9 +1,9 @@
 const baseURL = 'http://localhost:3000/api/v1/products/'
 
-export const fetchProducts = () => {
+export const fetchProducts = (q="") => {
   return (dispatch) => {
     dispatch({ type: 'LOADING_PRODUCTS'})
-    fetch(baseURL).then(response => {
+    fetch(baseURL + q).then(response => {
       return response.json()
     }).then(responseJSON => {
       dispatch({ type: 'PRODUCTS_FETCHED', products: responseJSON })

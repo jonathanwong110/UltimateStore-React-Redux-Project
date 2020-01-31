@@ -2,7 +2,11 @@ class Api::V1::ProductsController < ApplicationController
   before_action :set_product, only: [:show, :update, :destroy]
 
   def index
-    @products = Product.all
+    if params[:q]
+      @products = Product.where('title LIKE ?', "%" + params[:q] + "%")
+    else
+      @products = Product.all
+    end
 
     render json: @products, status: 200
   end
@@ -40,6 +44,6 @@ class Api::V1::ProductsController < ApplicationController
     end
 
     def product_params
-      params.require(:product).permit(:title, :price, :description, :image)
+      params.require(:product).permit(:title, :price, :description, :image, :q)
     end
 end

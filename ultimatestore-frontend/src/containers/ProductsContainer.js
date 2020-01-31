@@ -20,13 +20,13 @@ class ProductsContainer extends Component {
 
 const mapStateToProps = state => {
     return {
-      products: state.products,
+      products: state.products.products,
     }
   }
    
 const mapDispatchToProps = dispatch => {
   return {
-    fetchProducts: () => dispatch(fetchProducts()),
+    fetchProducts: (q) => dispatch(fetchProducts(q)),
     addProduct: (product) => dispatch(addProduct(product)),
     deleteProduct: (id) => dispatch(deleteProduct(id)),
   }
