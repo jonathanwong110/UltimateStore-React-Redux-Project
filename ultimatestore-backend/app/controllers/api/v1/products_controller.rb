@@ -2,11 +2,13 @@ class Api::V1::ProductsController < ApplicationController
   before_action :set_product, only: [:show, :update, :destroy]
 
   def index
-    if params[:q]
-      @products = Product.where('title LIKE ?', "%" + params[:q] + "%")
-    else
-      @products = Product.all
-    end
+    @products = Product.all
+
+    render json: @products, status: 200
+  end
+
+  def search
+    @products = Product.where('title LIKE ?', "%" + params[:q] + "%")
 
     render json: @products, status: 200
   end

@@ -25,11 +25,11 @@ class Products extends Component {
 
   handleSubmit = (e) => {
     e.preventDefault()
-    this.props.fetchProducts(this.state.searchEntry)
+    this.props.searchProducts(this.state.searchEntry)
   }
 
   render() {
-    
+
     return (
       <CardDeck>
         <Container>
@@ -41,7 +41,7 @@ class Products extends Component {
                     value={this.state.searchEntry}
                     placeholder="Search for a Product" 
                     onChange={e => this.handleChange(e)}/> 
-                    <button type="submit">Search</button>
+                    <button type="submit" onClick={e => this.handleSubmit(e)}>Search</button>
                 </form>
             </div>
             <br></br>

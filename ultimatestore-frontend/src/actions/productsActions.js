@@ -1,9 +1,9 @@
 const baseURL = 'http://localhost:3000/api/v1/products/'
 
-export const fetchProducts = (q="") => {
+export const fetchProducts = () => {
   return (dispatch) => {
     dispatch({ type: 'LOADING_PRODUCTS'})
-    fetch(baseURL + q).then(response => {
+    fetch(baseURL).then(response => {
       return response.json()
     }).then(responseJSON => {
       dispatch({ type: 'PRODUCTS_FETCHED', products: responseJSON })
@@ -11,6 +11,17 @@ export const fetchProducts = (q="") => {
   }
 }
 
+export const searchProducts = (q="") => {
+  return (dispatch) => {
+    // dispatch({ type: 'LOADING_PRODUCTS'})
+    console.log('hi')
+    fetch(baseURL + '/search/' + q).then(response => {
+      return response.json()
+    }).then(responseJSON => {
+      dispatch({ type: 'PRODUCTS_FETCHED', products: responseJSON })
+    })
+  }
+}
 export const addProduct = (product) => {
   return (dispatch) => {
     dispatch({ type: 'ADD_PRODUCT'})

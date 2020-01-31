@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import Products from '../components/products/Products'
 import ProductInput from '../components/products/ProductInput'
-import { fetchProducts, deleteProduct, addProduct } from '../actions/productsActions'
+import { fetchProducts, searchProducts, deleteProduct, addProduct } from '../actions/productsActions'
 import { connect } from 'react-redux'
 import MainNav from '../components/MainNav'
 
@@ -12,7 +12,7 @@ class ProductsContainer extends Component {
       <div>
         <MainNav/>
           <ProductInput addProduct={this.props.addProduct}/>
-          <Products fetchProducts={this.props.fetchProducts} products={this.props.products} deleteProduct={this.props.deleteProduct}/>
+          <Products fetchProducts={this.props.fetchProducts} searchProducts={searchProducts} products={this.props.products} deleteProduct={this.props.deleteProduct}/>
       </div>
     )
   }
@@ -26,7 +26,8 @@ const mapStateToProps = state => {
    
 const mapDispatchToProps = dispatch => {
   return {
-    fetchProducts: (q) => dispatch(fetchProducts(q)),
+    fetchProducts: () => dispatch(fetchProducts()),
+    searchProducts: () => dispatch(searchProducts()),
     addProduct: (product) => dispatch(addProduct(product)),
     deleteProduct: (id) => dispatch(deleteProduct(id)),
   }
