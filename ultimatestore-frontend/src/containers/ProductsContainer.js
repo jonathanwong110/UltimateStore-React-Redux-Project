@@ -12,7 +12,7 @@ class ProductsContainer extends Component {
       <div>
         <MainNav/>
           <ProductInput addProduct={this.props.addProduct}/>
-          <Products fetchProducts={this.props.fetchProducts} searchProducts={searchProducts} products={this.props.products} deleteProduct={this.props.deleteProduct}/>
+          <Products fetchProducts={this.props.fetchProducts} products={this.props.products} searchProducts={this.props.searchProducts} deleteProduct={this.props.deleteProduct}/>
       </div>
     )
   }

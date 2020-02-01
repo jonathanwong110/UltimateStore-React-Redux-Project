@@ -13,15 +13,16 @@ export const fetchProducts = () => {
 
 export const searchProducts = (q="") => {
   return (dispatch) => {
-    // dispatch({ type: 'LOADING_PRODUCTS'})
-    console.log('hi')
-    fetch(baseURL + '/search/' + q).then(response => {
+    dispatch({ type: 'LOADING_PRODUCTS'})
+    fetch(baseURL + 'search/' + q).then(response => {
       return response.json()
     }).then(responseJSON => {
       dispatch({ type: 'PRODUCTS_FETCHED', products: responseJSON })
     })
   }
+
 }
+
 export const addProduct = (product) => {
   return (dispatch) => {
     dispatch({ type: 'ADD_PRODUCT'})
