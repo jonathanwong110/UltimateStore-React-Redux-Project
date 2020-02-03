@@ -9,7 +9,7 @@ class App extends React.Component {
     return (
       <div className="Products">
         <ProductsContainer products={this.props.products}/>
-        <CartContainer/>
+        <CartContainer cart={this.props.cart}/>
       </div>
     );
   }
