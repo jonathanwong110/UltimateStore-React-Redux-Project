@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import { Navbar } from 'react-bootstrap';
+import { Navbar, ListGroup } from 'react-bootstrap';
 
 class Cart extends Component {
     
@@ -9,6 +9,9 @@ class Cart extends Component {
                 <Navbar bg="dark" variant="dark">
                 <Navbar.Brand>Cart</Navbar.Brand>
                 </Navbar>
+                <ListGroup>
+                    <ListGroup.Item>{this.props.cart}</ListGroup.Item>
+                </ListGroup>
             </div>
         )
     }

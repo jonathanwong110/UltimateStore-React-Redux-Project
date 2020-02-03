@@ -31,7 +31,7 @@ const mapDispatchToProps = dispatch => {
     searchProducts: () => dispatch(searchProducts()),
     addProduct: (product) => dispatch(addProduct(product)),
     deleteProduct: (id) => dispatch(deleteProduct(id)),
-    addToCart: (id) => dispatch(addToCart(id)),
+    addToCart: (product) => dispatch(addToCart(product)),
   }
 }
 

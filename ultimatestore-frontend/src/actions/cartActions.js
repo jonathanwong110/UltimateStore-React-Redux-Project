@@ -1,13 +1,14 @@
-export const addToCart = (id) => {
+export const addToCart = (product) => {
+    console.log(product)
     return {
         type: 'ADD_TO_CART',
-        id
+        payload: product
     }
 }
 
-export const removeFromCart = (id) => {
+export const removeFromCart = (product) => {
     return {
         type: 'REMOVE_FROM_CART',
-        id
+        payload: product
     }
 }
