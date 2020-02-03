@@ -56,7 +56,7 @@ function DisplayProduct(props) {
           <Button variant="danger" onClick={() => products.deleteProduct(products.product.id)}>
             Delete Product
           </Button>
-          <Button variant="success" onClick={handleClose}>
+          <Button variant="success" onClick={() => products.addToCart(products.product.id)}>
             Add to Cart
           </Button>
         </Modal.Footer>

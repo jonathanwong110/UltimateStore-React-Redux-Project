@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import Products from '../components/products/Products'
 import ProductInput from '../components/products/ProductInput'
 import { fetchProducts, searchProducts, deleteProduct, addProduct } from '../actions/productsActions'
+import { addToCart } from '../actions/cartActions'
 import { connect } from 'react-redux'
 import MainNav from '../components/MainNav'
 
@@ -12,7 +13,7 @@ class ProductsContainer extends Component {
       <div>
         <MainNav/>
           <ProductInput addProduct={this.props.addProduct}/>
-          <Products fetchProducts={this.props.fetchProducts} products={this.props.products} searchProducts={this.props.searchProducts} deleteProduct={this.props.deleteProduct}/>
+          <Products fetchProducts={this.props.fetchProducts} products={this.props.products} searchProducts={this.props.searchProducts} deleteProduct={this.props.deleteProduct} addToCart={this.props.addToCart}/>
       </div>
     )
   }
@@ -30,6 +31,7 @@ const mapDispatchToProps = dispatch => {
     searchProducts: () => dispatch(searchProducts()),
     addProduct: (product) => dispatch(addProduct(product)),
     deleteProduct: (id) => dispatch(deleteProduct(id)),
+    addToCart: (id) => dispatch(addToCart(id)),
   }
 }
 
