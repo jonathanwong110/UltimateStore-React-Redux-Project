@@ -3,9 +3,12 @@ export default function manageCart (state = {
 }, action) {
     switch (action.type) {
         case 'ADD_TO_CART':
-            console.log('testing ADD_TO_CART')
-        case 'REMOVE_FROM_CART':
-            console.log('testing REMOVE_FROM_CART')
+        let addedProduct = Object.values(action.payload)
+        console.log(addedProduct)
+            return {
+                ...state,
+                cart: [...state.cart, addedProduct]
+            }
         default:
             return state
     }
