@@ -4,6 +4,7 @@ import { BrowserRouter, Route, Switch} from 'react-router-dom';
 import ProductsContainer from './containers/ProductsContainer'
 import CartContainer from './containers/CartContainer'
 import MainNav from './components/MainNav'
+import SideNav from './components/products/SideNav'
 
 class App extends React.Component {
 
@@ -12,6 +13,7 @@ class App extends React.Component {
       <BrowserRouter>
         <div className="App">
           <MainNav/>
+          <SideNav/>
             <Switch>
               <Route exact path="/" render={routerProps => <ProductsContainer {...routerProps} products={this.props.products}/>} />/>
               <CartContainer cart={this.props.cart}/>
@@ -23,5 +25,3 @@ class App extends React.Component {
 }
 
 export default App;
-
-
