@@ -13,8 +13,12 @@ export default function manageCart (state = {
                 cart: [...state.cart, addedProduct]
             }
         case 'REMOVE_FROM_CART':
+            let removedProduct = action.payload
+            localStorage.removeItem('removedProduct',  {
+                cart: [...state.cart, removedProduct]
+            })
             return {
-                ...state, cart: state.cart.filter(product => product.id !== action.id)
+                ...state, cart: state.cart.filter(product => product[0] !== action.payload)
             }
         default:
             return state
