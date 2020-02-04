@@ -8,6 +8,12 @@ function DisplayProduct(props) {
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
 
+  function handleAdd() {
+   //add to cart
+   // close model
+   // show message
+  }
+
   const { products } = props
   if (!products) return null
 

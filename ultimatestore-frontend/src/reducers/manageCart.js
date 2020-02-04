@@ -3,7 +3,11 @@ export default function manageCart (state = {
 }, action) {
     switch (action.type) {
         case 'ADD_TO_CART':
-        let addedProduct = Object.values(action.payload)
+            let addedProduct = Object.values(action.payload)
+                localStorage.setItem('state',  {
+                    ...state,
+                    cart: [...state.cart, addedProduct]
+                })
             return {
                 ...state,
                 cart: [...state.cart, addedProduct]
