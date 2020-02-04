@@ -9,9 +9,13 @@ function DisplayProduct(props) {
   const handleShow = () => setShow(true);
 
   function handleAdd() {
-   //add to cart
-   // close model
-   // show message
+    props.products.addToCart(products.product)
+    handleClose()
+  }
+
+  function handleDelete() {
+    props.products.deleteProduct(products.product.id)
+    handleClose()
   }
 
   const { products } = props
@@ -59,10 +63,10 @@ function DisplayProduct(props) {
           <Button variant="dark" onClick={handleClose}>
             Close
           </Button>
-          <Button variant="danger" onClick={() => products.deleteProduct(products.product.id)}>
+          <Button variant="danger" onClick={handleDelete}>
             Delete Product
           </Button>
-          <Button variant="success" onClick={() => products.addToCart(products.product)}>
+          <Button variant="success" onClick={handleAdd}>
             Add to Cart
           </Button>
         </Modal.Footer>
