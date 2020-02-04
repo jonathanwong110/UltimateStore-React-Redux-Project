@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import { Navbar, Table } from 'react-bootstrap';
+import { Navbar, Table, Button } from 'react-bootstrap';
 
 class Cart extends Component {
     
@@ -13,9 +13,9 @@ class Cart extends Component {
                     <thead>
                         <tr>
                         <th>Product</th>
-                        <th>Image</th>
-                        <th>Price</th>
                         <th>Description</th>
+                        <th>Price</th>
+                        <th>Quantity</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -23,17 +23,19 @@ class Cart extends Component {
                             return (
                                 <tr key={product[0]}>
                                     <td>
-                                        {product[1]}
+                                        <strong>{product[1]}</strong>
+                                        <br></br>
+                                        <img src={product[4]} alt={product[1]}height='100px' width='100px'>
+                                        </img>
                                     </td>
                                     <td>
-                                        <img src={product[4]} height='100px' width='100px'>
-                                        </img>
+                                        {product[3]}
                                     </td>
                                     <td>
                                         {product[2]}
                                     </td>
                                     <td>
-                                        {product[3]}
+                                        <Button variant="danger">Remove</Button>
                                     </td>
                                 </tr>
                                     )
