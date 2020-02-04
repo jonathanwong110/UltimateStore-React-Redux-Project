@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import Cart from '../components/Cart'
+import Cart from '../components/cart/Cart'
 import { connect } from 'react-redux'
 import { removeFromCart } from '../actions/cartActions'
 
