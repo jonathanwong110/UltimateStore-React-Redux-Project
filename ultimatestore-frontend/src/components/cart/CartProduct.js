@@ -1,30 +1,29 @@
-import React, { Component } from 'react'
+import React from 'react'
 import { Button } from 'react-bootstrap'
 
-class CartProduct extends Component {
+export default function CartProduct(props) {
 
-  render() {
+    const { cartProduct } = props
 
     return (
-        <tr key={this.props.cartProduct[0]}>
+        <tr key={cartProduct[0]}>
             <td>
-                <strong>{this.props.cartProduct[1]}</strong>
+                <strong>{cartProduct[1]}</strong>
                 <br></br>
-                <img src={this.props.cartProduct[4]} alt={this.props.cartProduct[1]}height='100px' width='100px'>
+                <img src={cartProduct[4]} alt={cartProduct[1]}height='100px' width='100px'>
                 </img>
             </td>
             <td>
-                {this.props.cartProduct[3]}
+                {cartProduct[3]}
             </td>
             <td>
-                {this.props.cartProduct[2]}
+                {cartProduct[2]}
             </td>
             <td>
-                <Button variant="danger" onClick={() => this.props.removeFromCart(this.props.cartProduct[0])}>Remove from Cart</Button>
+                <Button variant="danger" onClick={() => props.removeFromCart(cartProduct[0])}>
+                    Remove from Cart
+                </Button>
             </td>
         </tr>        
     );
   }
-};
-
-export default CartProduct;

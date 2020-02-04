@@ -36,7 +36,8 @@ class ProductInput extends Component {
   render() {
     return (
       <div>
-        Product Input
+        <br></br>
+        Create a Product!
         <form onSubmit={e => this.handleSubmit(e)}>
         <br></br>
           <label>
