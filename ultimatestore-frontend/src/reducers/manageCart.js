@@ -8,6 +8,10 @@ export default function manageCart (state = {
                 ...state,
                 cart: [...state.cart, addedProduct]
             }
+        case 'REMOVE_FROM_CART':
+            return {
+                ...state, cart: state.cart.filter(product => product.id !== action.id)
+            }
         default:
             return state
     }

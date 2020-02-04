@@ -35,7 +35,7 @@ class Cart extends Component {
                                         {product[2]}
                                     </td>
                                     <td>
-                                        <Button variant="danger">Remove</Button>
+                                        <Button variant="danger" onClick={() => this.props.removeFromCart(product[0])}>Remove from Cart</Button>
                                     </td>
                                 </tr>
                                     )

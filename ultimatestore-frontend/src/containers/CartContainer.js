@@ -8,7 +8,7 @@ class CartContainer extends Component {
   render() {
     return (
       <div>
-        <Cart cart={this.props.cart}/>
+        <Cart cart={this.props.cart} removeFromCart={this.props.removeFromCart}/>
       </div>
     )
   }
