@@ -1,10 +1,9 @@
 import React from 'react'
 import { Nav } from 'react-bootstrap';
 import { Link } from 'react-router-dom'
+import ShowCategory from '../products/ShowCategory'
 
 export default function CategoryNav(props) {
-
-    console.log('props', props)
 
     return (
         <>
@@ -18,6 +17,7 @@ export default function CategoryNav(props) {
             <Nav.Item>
                 <Link to="/products/miscellaneous">Miscellaneous</Link>
             </Nav.Item>
+            <ShowCategory products={props.products}/>
         </Nav>
         </>
     )

@@ -61,7 +61,6 @@ class ProductInput extends Component {
           <select type="select" onChange={e => this.handleChange(e)} value={this.state.category}>
             <option value="Apparel">Apparel</option>
             <option value="Electronics">Electronics</option>
-            <option value="Miscellaneous">Miscellaneous</option>
           </select>
         </label>
           <input type="submit" value="Create Product"></input>
