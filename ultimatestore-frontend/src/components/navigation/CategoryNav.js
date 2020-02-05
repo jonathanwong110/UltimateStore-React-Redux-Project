@@ -2,6 +2,7 @@ import React from 'react';
 import { Nav } from 'react-bootstrap';
 import { Link } from 'react-router-dom'
 import ShowApparel from '../products/ShowApparel'
+import ShowElectronics from '../products/ShowElectronics'
 
 export default function CategoryNav(props) {
 
@@ -14,6 +15,7 @@ export default function CategoryNav(props) {
                 </Nav.Item>
                 <Nav.Item>
                     <Link to="/products/electronics">Electronics</Link>
+                    <ShowElectronics products={props.products}/>
                 </Nav.Item>
             </Nav>
         </>

@@ -17,6 +17,7 @@ class App extends React.Component {
               <Route exact path="/" render={routerProps => <ProductsContainer {...routerProps} products={this.props.products}/>} />/>
               <Route exact path="/cart" render={routerProps => <CartContainer {...routerProps} cart={this.props.cart}/>} />/>
               <Route exact path="/products/apparel" render={routerProps => <ShowApparel {...routerProps} products={this.props.products}/>} />/>
+              <Route exact path="/products/electronics" render={routerProps => <ShowApparel {...routerProps} products={this.props.products}/>} />/>
             </Switch>
         </div>
       </BrowserRouter>
