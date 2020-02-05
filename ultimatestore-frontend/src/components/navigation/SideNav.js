@@ -1,12 +1,12 @@
 import React from 'react'
-import Sidebar from "react-sidebar";
+import { Nav } from 'react-bootstrap'
 
 export default function SideNav(props) {
 
     return (
-        <Sidebar>
+        <Nav>
             testing
-        </Sidebar>
+        </Nav>
     )
 
 

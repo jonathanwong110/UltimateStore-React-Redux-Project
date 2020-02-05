@@ -3,8 +3,8 @@ import './App.css';
 import { BrowserRouter, Route, Switch} from 'react-router-dom';
 import ProductsContainer from './containers/ProductsContainer'
 import CartContainer from './containers/CartContainer'
-import MainNav from './components/MainNav'
-import SideNav from './components/products/SideNav'
+import MainNav from './components/navigation/MainNav'
+import SideNav from './components/navigation/SideNav'
 
 class App extends React.Component {
 
