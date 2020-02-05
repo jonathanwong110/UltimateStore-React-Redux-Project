@@ -4,7 +4,7 @@ import ProductInput from '../components/products/ProductInput'
 import { fetchProducts, searchProducts, deleteProduct, addProduct } from '../actions/productsActions'
 import { addToCart } from '../actions/cartActions'
 import { connect } from 'react-redux'
-import SecondNav from '../components/navigation/SecondNav'
+import CategoryNav from '../components/navigation/CategoryNav'
 
 class ProductsContainer extends Component {
 
@@ -12,7 +12,7 @@ class ProductsContainer extends Component {
     return (
       <div>
           <ProductInput addProduct={this.props.addProduct}/>
-          <SecondNav/>
+          <CategoryNav/>
           <br></br>
           <Products fetchProducts={this.props.fetchProducts} products={this.props.products} searchProducts={this.props.searchProducts} deleteProduct={this.props.deleteProduct} addToCart={this.props.addToCart}/>
       </div>
