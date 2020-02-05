@@ -7,9 +7,9 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 Product.create([
-    { title: 'Hat', price: 30, description: 'new', image: 'https://www.rei.com/media/6f8be96e-a698-4076-9b6e-cb70e30445e6?size=512x682', category: "Clothing"},
-    { title: 'Sneakers', price: 100, description: 'worn', image: 'https://cdn.shopify.com/s/files/1/0238/2821/products/Mens-193-Royale-Blanco-3RMW-Product-102_3d9c4e83-a5c5-4326-91b8-0308fa05101e.jpg?v=1563990962', category: "Clothes"},
-    { title: 'Jeans', price: 50, description: 'new', image: 'https://media.gq.com/photos/5daf1e5e4e024d0009825d71/master/w_2000,h_1333,c_limit/Abercrombie-Jeans.jpg', category: "Clothes"},
+    { title: 'Hat', price: 30, description: 'new', image: 'https://www.rei.com/media/6f8be96e-a698-4076-9b6e-cb70e30445e6?size=512x682', category: "Apparel"},
+    { title: 'Sneakers', price: 100, description: 'worn', image: 'https://cdn.shopify.com/s/files/1/0238/2821/products/Mens-193-Royale-Blanco-3RMW-Product-102_3d9c4e83-a5c5-4326-91b8-0308fa05101e.jpg?v=1563990962', category: "Apparel"},
+    { title: 'Jeans', price: 50, description: 'new', image: 'https://media.gq.com/photos/5daf1e5e4e024d0009825d71/master/w_2000,h_1333,c_limit/Abercrombie-Jeans.jpg', category: "Apparel"},
     { title: 'Humidifier', price: 30, description: 'old', image: 'https://images-na.ssl-images-amazon.com/images/I/61uBEEYbpzL._SX425_.jpg', category: "Electronics"},
     { title: 'Headphones', price: 200, description: 'new', image: 'https://cnet4.cbsistatic.com/img/oRS5jU8S91e1L2aFDkg3UOpIIOo=/1200x675/2018/08/30/e7ad8666-7caf-41fd-9349-06fa647fd711/sony-1000xm3-7.jpg', category: "Electronics"},
     { title: 'Thermos', price: 20, description: 'new', image: 'https://images-na.ssl-images-amazon.com/images/I/31ZoipT5TOL._SL500_AC_SS350_.jpg', category: "Miscellaneous"}

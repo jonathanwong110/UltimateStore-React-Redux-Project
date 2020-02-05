@@ -12,6 +12,9 @@ export default function Product(props) {
       <Card.Body>
         <Card.Title>{product.title}</Card.Title>
         <Card.Text>
+          {product.category}
+          <br></br>
+          <br></br>
           ${product.price}
         </Card.Text>
         <ShowProduct products={props}/>

@@ -9,7 +9,8 @@ class ProductInput extends Component {
       title: '',
       price: '',
       description: '',
-      image: ''
+      image: '',
+      category: ''
     }
   }
 
@@ -27,7 +28,8 @@ class ProductInput extends Component {
         title: '',
         price: '',
         description: '',
-        image: ''
+        image: '',
+        category: ''
     });
     this.props.addProduct(newProduct)
   }
@@ -54,6 +56,14 @@ class ProductInput extends Component {
           <label>
               Image: <input type="text" name="image" onChange={e => this.handleChange(e)} value={this.state.image}></input> 
           </label>
+          <label>
+          Category:
+          <select value={this.state.value} onChange={this.handleChange}>
+            <option value="Apparel">Apparel</option>
+            <option value="Electronics">Electronics</option>
+            <option value="Miscellaneous">Miscellaneous</option>
+          </select>
+        </label>
           <input type="submit" value="Create Product"></input>
         </form>
         <br></br>
