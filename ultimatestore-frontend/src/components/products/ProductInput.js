@@ -58,7 +58,7 @@ class ProductInput extends Component {
           </label>
           <label>
           Category:
-          <select value={this.state.value} onChange={this.handleChange}>
+          <select type="select" onChange={e => this.handleChange(e)} value={this.state.category}>
             <option value="Apparel">Apparel</option>
             <option value="Electronics">Electronics</option>
             <option value="Miscellaneous">Miscellaneous</option>
