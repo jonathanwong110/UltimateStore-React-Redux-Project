@@ -12,7 +12,9 @@ Product.create([
     { title: "Jeans", price: 50, description: "new", image: "https://media.gq.com/photos/5daf1e5e4e024d0009825d71/master/w_2000,h_1333,c_limit/Abercrombie-Jeans.jpg", category: "Apparel"},
     { title: "Humidifier", price: 30, description: "old", image: "https://images-na.ssl-images-amazon.com/images/I/61uBEEYbpzL._SX425_.jpg", category: "Electronics"},
     { title: "Headphones", price: 200, description: "new", image: "https://cnet4.cbsistatic.com/img/oRS5jU8S91e1L2aFDkg3UOpIIOo=/1200x675/2018/08/30/e7ad8666-7caf-41fd-9349-06fa647fd711/sony-1000xm3-7.jpg", category: "Electronics"},
-    { title: "iPhone 11 Pro Max", price: 950, description: "new", image: "https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/iphone-11-pro-max-gold-select-2019?wid=834&hei=1000&fmt=jpeg&qlt=95&op_usm=0.5,0.5&.v=1566953859132", category: "Electronics"}
+    { title: "iPhone 11 Pro Max", price: 950, description: "new", image: "https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/iphone-11-pro-max-gold-select-2019?wid=834&hei=1000&fmt=jpeg&qlt=95&op_usm=0.5,0.5&.v=1566953859132", category: "Electronics"},
+    { title: "Thermos", price: 10, description: "old", image: "https://images-na.ssl-images-amazon.com/images/I/31ZoipT5TOL._SL500_AC_SS350_.jpg", category: "Miscellaneous"},
+    { title: "Wallet", price: 100, description: "new", image: "https://shinola.imgix.net/media/catalog/product/s/0/s0310009507_slimbifoldwallet_signature_cognac_v3-_1.png?bg=f7f7f7&h=800&ixlib=php-1.1.0&q=90&w=1920", category: "Miscellaneous"}
 ])
 
 Review.create([

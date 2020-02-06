@@ -6,6 +6,7 @@ import CartContainer from './containers/CartContainer'
 import MainNav from './components/navigation/MainNav'
 import ShowApparel from './components/products/ShowApparel'
 import ShowElectronics from './components/products/ShowElectronics'
+import ShowMiscellaneous from './components/products/ShowMiscellaneous'
 import { connect } from 'react-redux'
 
 class App extends React.Component {
@@ -20,6 +21,7 @@ class App extends React.Component {
               <Route exact path="/cart" render={routerProps => <CartContainer {...routerProps} cart={this.props.cart}/>} />/>
               <Route exact path="/products/apparel" render={routerProps => <ShowApparel {...routerProps} products={this.props.products}/>} />/>
               <Route exact path="/products/electronics" render={routerProps => <ShowElectronics {...routerProps} products={this.props.products}/>} />/>
+              <Route exact path="/products/miscellaneous" render={routerProps => <ShowMiscellaneous {...routerProps} products={this.props.products}/>} />/>
             </Switch>
         </div>
       </BrowserRouter>

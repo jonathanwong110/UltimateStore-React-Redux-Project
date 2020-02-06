@@ -12,6 +12,9 @@ export default function CategoryNav(props) {
                 <Nav.Item>
                     <Link to="/products/electronics">Electronics</Link>
                 </Nav.Item>
+                <Nav.Item>
+                    <Link to="/products/miscellaneous">Miscellaneous</Link>
+                </Nav.Item>
             </Nav>
         )
     }
