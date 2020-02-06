@@ -9,12 +9,13 @@ function DisplayProduct(props) {
   const handleShow = () => setShow(true);
 
   function handleAdd() {
-    props.products.addToCart(products.product)
+    console.log('products', products)
+    products.addToCart(products.product)
     handleClose()
   }
 
   function handleDelete() {
-    props.products.deleteProduct(products.product.id)
+    products.deleteProduct(products.product.id)
     handleClose()
   }
 

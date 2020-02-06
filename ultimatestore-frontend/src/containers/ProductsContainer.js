@@ -12,7 +12,7 @@ class ProductsContainer extends Component {
     return (
       <div>
           <ProductInput addProduct={this.props.addProduct}/>
-          <CategoryNav products={this.props.products} deleteProduct={this.props.deleteProduct} addToCart={this.props.addToCart}/>
+          <CategoryNav/>
           <br></br>
           <Products fetchProducts={this.props.fetchProducts} products={this.props.products} searchProducts={this.props.searchProducts} deleteProduct={this.props.deleteProduct} addToCart={this.props.addToCart}/>
       </div>
