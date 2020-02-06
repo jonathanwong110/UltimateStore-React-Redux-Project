@@ -1,8 +1,10 @@
-import React from 'react';
+import React, {Component} from 'react';
 import { Nav } from 'react-bootstrap';
 import { Link } from 'react-router-dom'
 
-export default function CategoryNav(props) {
+class CategoryNav extends Component {
+    
+    render() {
 
     return (
             <Nav className="justify-content-center">
@@ -18,6 +20,10 @@ export default function CategoryNav(props) {
             </Nav>
         )
     }
+}
+
+export default CategoryNav
+
 
     
 

@@ -11,7 +11,13 @@ export default function ShowMiscellaneous(props) {
 
     return (
       <>
+        <br></br>
+        <br></br>
+        <br></br>
         <CategoryNav/>
+        <br></br>
+        <br></br>
+        <br></br>
           <CardDeck>
             <Container>
               <Row>

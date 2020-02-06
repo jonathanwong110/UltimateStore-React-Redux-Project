@@ -3,7 +3,6 @@ import { CardDeck, Container, Row, Col } from 'react-bootstrap';
 import Product from './Product'
 import CategoryNav from '../navigation/CategoryNav'
 
-
 export default function ShowElectronics(props) {
 
     let propProducts = props.products
@@ -12,7 +11,13 @@ export default function ShowElectronics(props) {
 
     return (
       <>
+        <br></br>
+        <br></br>
+        <br></br>
         <CategoryNav/>
+        <br></br>
+        <br></br>
+        <br></br>
           <CardDeck>
             <Container>
               <Row>
