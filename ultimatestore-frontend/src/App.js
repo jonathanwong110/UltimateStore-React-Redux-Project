@@ -8,6 +8,8 @@ import ShowApparel from './components/products/ShowApparel'
 import ShowElectronics from './components/products/ShowElectronics'
 import ShowMiscellaneous from './components/products/ShowMiscellaneous'
 import { connect } from 'react-redux'
+import { addToCart } from './actions/cartActions'
+import { deleteProduct } from './actions/productsActions'
 
 class App extends React.Component {
 
@@ -19,7 +21,7 @@ class App extends React.Component {
             <Switch>
               <Route exact path="/" render={routerProps => <ProductsContainer {...routerProps} products={this.props.products}/>} />/>
               <Route exact path="/cart" render={routerProps => <CartContainer {...routerProps} cart={this.props.cart}/>} />/>
-              <Route exact path="/products/apparel" render={routerProps => <ShowApparel {...routerProps} products={this.props.products}/>} />/>
+              <Route exact path="/products/apparel" render={routerProps => <ShowApparel {...routerProps} products={this.props.products} deleteProduct={deleteProduct} addToCart={addToCart}/>} />/>
               <Route exact path="/products/electronics" render={routerProps => <ShowElectronics {...routerProps} products={this.props.products}/>} />/>
               <Route exact path="/products/miscellaneous" render={routerProps => <ShowMiscellaneous {...routerProps} products={this.props.products}/>} />/>
             </Switch>
