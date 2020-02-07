@@ -9,7 +9,7 @@ import ShowElectronics from './components/categories/ShowElectronics'
 import ShowMiscellaneous from './components/categories/ShowMiscellaneous'
 import { connect } from 'react-redux'
 import { addToCart } from './actions/cartActions'
-import { fetchProducts, searchProducts, deleteProduct, addProduct } from './actions/productsActions'
+import { fetchProducts, deleteProduct, addProduct } from './actions/productsActions'
 
 class App extends React.Component {
 
@@ -41,7 +41,6 @@ const mapStateToProps = state => {
 const mapDispatchToProps = dispatch => {
   return {
     fetchProducts: () => dispatch(fetchProducts()),
-    searchProducts: () => dispatch(searchProducts()),
     addProduct: (product) => dispatch(addProduct(product)),
     deleteProduct: (id) => dispatch(deleteProduct(id)),
     addToCart: (product) => dispatch(addToCart(product)),

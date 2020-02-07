@@ -9,6 +9,7 @@ class Products extends Component {
     
     this.state = {
       searchEntry: '',
+      searchQuery: '',
       loading: false
     }
   }
@@ -25,10 +26,16 @@ class Products extends Component {
 
   handleSubmit = (e) => {
     e.preventDefault()
-    this.props.searchProducts(this.state.searchEntry)
+    const searchQuery = this.state.searchEntry
+    this.setState({
+      searchQuery
+    })
   }
+  
 
   render() {
+
+    const filteredProducts = this.props.products.filter(product => product.title.toLowerCase().includes(this.state.searchQuery))
 
     return (
       <CardDeck>
@@ -46,7 +53,7 @@ class Products extends Component {
             </div>
             <br></br>
           <Row>
-              {this.props.products.map(product => 
+              {filteredProducts.map(product => 
                 <Col key={product.id} xs="4" md="4">
                   <Product key={product.id} product={product} deleteProduct={this.props.deleteProduct} addToCart={this.props.addToCart}/>
                 </Col>

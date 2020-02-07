@@ -7,12 +7,6 @@ class Api::V1::ProductsController < ApplicationController
     render json: @products, status: 200
   end
 
-  def search
-    @products = Product.where('title LIKE ?', "%" + params[:q] + "%")
-
-    render json: @products, status: 200
-  end
-
   def show
     render json: @product, status: 200
   end
@@ -46,6 +40,6 @@ class Api::V1::ProductsController < ApplicationController
     end
 
     def product_params
-      params.require(:product).permit(:title, :price, :description, :image, :category, :q)
+      params.require(:product).permit(:title, :price, :description, :image, :category)
     end
 end
