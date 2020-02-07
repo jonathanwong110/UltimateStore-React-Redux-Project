@@ -20,6 +20,12 @@ class ProductInput extends Component {
     });
   }
 
+  handleCategoryChange = (e) => {
+    this.setState({
+      category: e.target.value
+    })
+  }
+
   handleSubmit = (e) => {
     e.preventDefault();
     const newProduct = {...this.state}
@@ -58,9 +64,10 @@ class ProductInput extends Component {
           </label>
           <label>
           Category:
-          <select type="select" onChange={e => this.handleChange(e)} value={this.state.category}>
+          <select type="select" onChange={e => this.handleCategoryChange(e)} value={this.state.category}>
             <option value="Apparel">Apparel</option>
             <option value="Electronics">Electronics</option>
+            <option value="Electronics">Miscellaneous</option>
           </select>
         </label>
           <input type="submit" value="Create Product"></input>

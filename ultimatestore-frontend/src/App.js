@@ -9,7 +9,7 @@ import ShowElectronics from './components/products/ShowElectronics'
 import ShowMiscellaneous from './components/products/ShowMiscellaneous'
 import { connect } from 'react-redux'
 import { addToCart } from './actions/cartActions'
-import { deleteProduct } from './actions/productsActions'
+import { fetchProducts, searchProducts, deleteProduct, addProduct } from './actions/productsActions'
 
 class App extends React.Component {
 
@@ -19,11 +19,11 @@ class App extends React.Component {
         <div className="App">
           <MainNav/>
             <Switch>
-              <Route exact path="/" render={routerProps => <ProductsContainer {...routerProps} products={this.props.products}/>} />/>
-              <Route exact path="/cart" render={routerProps => <CartContainer {...routerProps} cart={this.props.cart}/>} />/>
-              <Route exact path="/products/apparel" render={routerProps => <ShowApparel {...routerProps} products={this.props.products} deleteProduct={deleteProduct} addToCart={addToCart}/>} />/>
-              <Route exact path="/products/electronics" render={routerProps => <ShowElectronics {...routerProps} products={this.props.products}/>} />/>
-              <Route exact path="/products/miscellaneous" render={routerProps => <ShowMiscellaneous {...routerProps} products={this.props.products}/>} />/>
+              <Route exact path="/" render={routerProps => <ProductsContainer {...routerProps} {...{...this.props}} />} />
+              <Route exact path="/cart" render={routerProps => <CartContainer {...routerProps} cart={this.props.cart}/>} />
+              <Route exact path="/products/apparel" render={routerProps => <ShowApparel {...routerProps} {...{...this.props}}/>} />
+              <Route exact path="/products/electronics" render={routerProps => <ShowElectronics {...routerProps} {...{...this.props}}/>} />
+              <Route exact path="/products/miscellaneous" render={routerProps => <ShowMiscellaneous {...routerProps} {...{...this.props}}/>} />
             </Switch>
         </div>
       </BrowserRouter>
@@ -38,4 +38,14 @@ const mapStateToProps = state => {
   }
 }
 
-export default connect(mapStateToProps)(App);
+const mapDispatchToProps = dispatch => {
+  return {
+    fetchProducts: () => dispatch(fetchProducts()),
+    searchProducts: () => dispatch(searchProducts()),
+    addProduct: (product) => dispatch(addProduct(product)),
+    deleteProduct: (id) => dispatch(deleteProduct(id)),
+    addToCart: (product) => dispatch(addToCart(product)),
+  }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(App);

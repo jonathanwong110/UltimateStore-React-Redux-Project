@@ -9,16 +9,16 @@ class CategoryNav extends Component {
     return (
         <Nav className="justify-content-center">
             <Nav.Item>
-                <Link to="/"> - All </Link>
+                <Link to="/"> All -</Link>
             </Nav.Item>
             <Nav.Item>
-                <Link to="/products/apparel"> - Apparel </Link>
+                <Link to="/products/apparel"> - Apparel -</Link>
             </Nav.Item>
             <Nav.Item>
                 <Link to="/products/electronics"> - Electronics - </Link>
             </Nav.Item>
             <Nav.Item>
-                <Link to="/products/miscellaneous"> Miscellaneous - </Link>
+                <Link to="/products/miscellaneous"> - Miscellaneous </Link>
             </Nav.Item>
         </Nav>
         )

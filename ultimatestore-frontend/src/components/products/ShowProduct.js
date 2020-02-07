@@ -41,7 +41,7 @@ function DisplayProduct(props) {
           <h2>${products.product.price}</h2>
             <br></br>
           <h3>Reviews: </h3>
-          {products.product.reviews.length > 0 ?
+          {products.product.reviews && products.product.reviews.length > 0 ?
               products.product.reviews.map(review => {
                 return (
                   <ul key={review.id}>
