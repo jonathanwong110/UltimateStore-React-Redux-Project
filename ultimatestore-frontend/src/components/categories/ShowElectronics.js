@@ -1,6 +1,6 @@
 import React from 'react'
 import { CardDeck, Container, Row, Col } from 'react-bootstrap';
-import Product from './Product'
+import Product from '../products/Product'
 import CategoryNav from '../navigation/CategoryNav'
 
 export default function ShowElectronics(props) {
