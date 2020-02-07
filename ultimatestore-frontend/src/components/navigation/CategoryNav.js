@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import { Nav } from 'react-bootstrap';
+import { Nav, Navbar } from 'react-bootstrap';
 import { Link } from 'react-router-dom'
 
 class CategoryNav extends Component {
@@ -7,20 +7,22 @@ class CategoryNav extends Component {
     render() {
 
     return (
-        <Nav className="justify-content-center">
-            <Nav.Item>
-                <Link to="/"> All -</Link>
-            </Nav.Item>
-            <Nav.Item>
-                <Link to="/products/apparel"> - Apparel -</Link>
-            </Nav.Item>
-            <Nav.Item>
-                <Link to="/products/electronics"> - Electronics - </Link>
-            </Nav.Item>
-            <Nav.Item>
-                <Link to="/products/miscellaneous"> - Miscellaneous </Link>
-            </Nav.Item>
-        </Nav>
+        <>
+            <Navbar collapseOnSelect>
+                <Nav className="mr-auto" >
+                    <Link to="/"> All </Link>
+                </Nav>
+                <Nav className="mr-auto">
+                    <Link to="/products/apparel"> Apparel </Link>
+                </Nav>
+                <Nav className="mr-auto">
+                    <Link to="/products/electronics"> Electronics </Link>
+                </Nav>
+                <Nav className="mr-auto">
+                    <Link to="/products/miscellaneous"> Miscellaneous </Link>
+                </Nav>
+            </Navbar>
+        </>
         )
     }
 }

@@ -12,8 +12,6 @@ export default function ShowElectronics(props) {
     return (
       <>
         <br></br>
-        <br></br>
-        <br></br>
         <CategoryNav/>
         <br></br>
         <br></br>

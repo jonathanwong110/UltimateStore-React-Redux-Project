@@ -9,7 +9,8 @@ class Cart extends Component {
         return (
             <>
             <CategoryNav/>
-            <Navbar bg="dark" variant="dark">
+            <br></br>
+            <Navbar>
             <Navbar.Brand>Cart</Navbar.Brand>
             </Navbar>
             <Table>
