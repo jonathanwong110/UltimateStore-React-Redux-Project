@@ -3,17 +3,42 @@ import Products from '../components/products/Products'
 import ProductInput from '../components/products/ProductInput'
 import { connect } from 'react-redux'
 import CategoryNav from '../components/navigation/CategoryNav'
+import { Container, Row, Col } from 'react-bootstrap'
 
 class ProductsContainer extends Component {
 
+  constructor(props) {
+    super(props)
+    this.state = {
+      filterBy: ""
+    }
+  }
+
+  filterBy = category => {
+    this.setState({
+      filterBy: category === this.state.filterBy ? "" : category
+    })
+  }
+
   render() {
     return (
-      <div>
-          <ProductInput addProduct={this.props.addProduct}/>
-          <CategoryNav/>
-          <br></br>
-          <Products fetchProducts={this.props.fetchProducts} products={this.props.products} searchProducts={this.props.searchProducts} deleteProduct={this.props.deleteProduct} addToCart={this.props.addToCart}/>
-      </div>
+      <Container>
+        <Row>
+          <Col>
+            <ProductInput addProduct={this.props.addProduct}/>
+          </Col>
+        </Row>
+        <Row>
+          <Col>
+            <CategoryNav filterBy={this.filterBy}/>
+          </Col>
+        </Row>
+        <Row>
+          <Col>
+            <Products filterBy={this.state.filterBy} fetchProducts={this.props.fetchProducts} products={this.props.products} deleteProduct={this.props.deleteProduct} addToCart={this.props.addToCart}/>
+          </Col>
+        </Row>
+      </Container>
     )
   }
 }
