@@ -10,7 +10,7 @@ class ProductInput extends Component {
       price: '',
       description: '',
       image: '',
-      category: ''
+      category: 'Apparel'
     }
   }
 
@@ -40,7 +40,6 @@ class ProductInput extends Component {
     this.props.addProduct(newProduct)
   }
 
-
   render() {
     return (
       <div>
@@ -67,7 +66,7 @@ class ProductInput extends Component {
           <select type="select" onChange={e => this.handleCategoryChange(e)} value={this.state.category}>
             <option value="Apparel">Apparel</option>
             <option value="Electronics">Electronics</option>
-            <option value="Electronics">Miscellaneous</option>
+            <option value="Miscellaneous">Miscellaneous</option>
           </select>
         </label>
           <input type="submit" value="Create Product"></input>
