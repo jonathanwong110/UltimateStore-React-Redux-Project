@@ -14,7 +14,7 @@ function DisplayProduct(props) {
   }
 
   function handleDelete() {
-    props.products.deleteProduct(products.product.id)
+    products.deleteProduct(products.product.id)
     handleClose()
   }
 

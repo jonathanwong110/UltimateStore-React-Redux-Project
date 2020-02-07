@@ -20,6 +20,8 @@ class Products extends Component {
 
   render() {
 
+    console.log('this.props.products', this.props.products)
+
     // const filteredProducts = this.props.products.filter(product => product.title.toLowerCase().includes(this.state.searchQuery))
 
     return (
