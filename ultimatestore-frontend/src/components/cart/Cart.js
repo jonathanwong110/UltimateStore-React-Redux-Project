@@ -1,40 +1,39 @@
-import React, {Component} from 'react';
+import React from 'react';
 import { Navbar, Table } from 'react-bootstrap';
 import CartProduct from './CartProduct'
-import CategoryNav from '../navigation/CategoryNav'
+import { removeFromCart} from '../../actions/cartActions'
 
-class Cart extends Component {
+export default function Cart(props) {
+
+    const { cart } = props;
     
-    render() {
-        return (
-            <>
-            <CategoryNav/>
-            <br></br>
-            <Navbar>
-            <Navbar.Brand>Cart</Navbar.Brand>
-            </Navbar>
-            <Table>
-                <thead>
-                    <tr>
-                    <th>Product</th>
-                    <th>Description</th>
-                    <th>Price</th>
-                    <th>Quantity</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    {this.props.cart.map(product => {
-                        return (
-                        <CartProduct key={product[0]} cartProduct={product} removeFromCart={this.props.removeFromCart}/>
-                                )
-                            }
-                        )
-                    }
-                </tbody>
-            </Table>
-            </>
-        )
-    }
+    return (
+        <>
+        <br></br>
+        <Navbar>
+        <Navbar.Brand>Cart</Navbar.Brand>
+        </Navbar>
+        <Table>
+            <thead>
+                <tr>
+                <th>Product</th>
+                <th>Description</th>
+                <th>Price</th>
+                <th>Quantity</th>
+                </tr>
+            </thead>
+            <tbody>
+                {cart.map(product => {
+                    return (
+                    <CartProduct key={product[0]} cartProduct={product} removeFromCart={removeFromCart}/>
+                            )
+                        }
+                    )
+                }
+            </tbody>
+        </Table>
+        </>
+    )
 }
 
-export default Cart
+

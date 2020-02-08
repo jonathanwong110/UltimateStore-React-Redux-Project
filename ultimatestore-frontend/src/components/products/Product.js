@@ -7,7 +7,7 @@ export default function Product(props) {
   const { product } = props;
   
   return (
-    <Card style={{ width: '15rem' }}>
+    <Card style={{ width: '15rem', margin: '20px' }}>
       <Card.Img variant="top" src={product.image} height="200px" width="auto"/>
       <Card.Body>
         <Card.Title>{product.title}</Card.Title>
