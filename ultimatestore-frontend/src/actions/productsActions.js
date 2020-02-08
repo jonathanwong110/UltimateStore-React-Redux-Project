@@ -12,15 +12,16 @@ export const fetchProducts = () => {
 }
 
 export const addProduct = (product) => {
+  const newProduct = {product}
+  console.log(newProduct)
   return (dispatch) => {
     dispatch({ type: 'ADD_PRODUCT'})
     fetch(baseURL, {
       method: "POST",
       header: {'Accept':'application/json',
-      'Content-type':'application/json',
-      body: JSON.stringify(product)
-      }
-    })
+      'Content-type':'application/json'}, 
+      body: JSON.stringify(newProduct)
+    }).then(res => res.json()).then(console.log)
   }
 }
 

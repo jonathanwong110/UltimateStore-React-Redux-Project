@@ -1,10 +1,9 @@
 import React, { Component } from 'react';
-import axios from 'axios'
 
 class ProductInput extends Component {
 
-  constructor() {
-    super()
+  constructor(props) {
+    super(props)
     this.state = {
       title: '',
       price: '',
@@ -29,7 +28,7 @@ class ProductInput extends Component {
   handleSubmit = (e) => {
     e.preventDefault();
     const newProduct = {...this.state}
-    axios.post('http://localhost:3000/api/v1/products', newProduct)
+    this.props.addProduct(newProduct)
     this.setState({
         title: '',
         price: '',
@@ -37,7 +36,6 @@ class ProductInput extends Component {
         image: '',
         category: ''
     });
-    this.props.addProduct(newProduct)
   }
 
   render() {

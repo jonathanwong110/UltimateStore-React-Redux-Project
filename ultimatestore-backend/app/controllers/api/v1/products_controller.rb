@@ -12,10 +12,10 @@ class Api::V1::ProductsController < ApplicationController
   end
 
   def create
-    @product = Product.new(product_params)
-
-    if @product.save
-      render json: @product, status: 200, location: @product
+    @product = Product.create(product_params)
+    
+    if @product
+      render json: @product, status: 200
     else
       render json: @product.errors, status: :unprocessable_entity
     end
