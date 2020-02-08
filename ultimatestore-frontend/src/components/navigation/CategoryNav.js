@@ -1,5 +1,5 @@
-import React, {Component} from 'react';
-import { Nav, Navbar,Button } from 'react-bootstrap';
+import React from 'react';
+import { Nav, Navbar, Button } from 'react-bootstrap';
 
 export default function CategoryNav(props) {
 
