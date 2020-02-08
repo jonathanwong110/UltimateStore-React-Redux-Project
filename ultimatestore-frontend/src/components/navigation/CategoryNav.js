@@ -1,30 +1,26 @@
 import React, {Component} from 'react';
-import { Nav, Navbar } from 'react-bootstrap';
-import { Link } from 'react-router-dom'
+import { Nav, Navbar,Button } from 'react-bootstrap';
 
-class CategoryNav extends Component {
-    
-    render() {
+export default function CategoryNav(props) {
 
     return (
         <>
             <Navbar collapseOnSelect>
-                <Nav className="mr-auto" >
-                    <Link to="/"> All </Link>
+                <Nav className="mr-auto" onClick={() => props.filterBy('')}>
+                    <Button variant="link">All</Button>
                 </Nav>
-                <Nav className="mr-auto">
-                    <Link to="/products/apparel"> Apparel </Link>
+                <Nav className="mr-auto" onClick={() => props.filterBy('Apparel')}>
+                    <Button variant="link">Apparel</Button>
                 </Nav>
-                <Nav className="mr-auto">
-                    <Link to="/products/electronics"> Electronics </Link>
+                <Nav className="mr-auto" onClick={() => props.filterBy('Electronics')}>
+                    <Button variant="link">Electronics</Button>
                 </Nav>
-                <Nav className="mr-auto">
-                    <Link to="/products/miscellaneous"> Miscellaneous </Link>
+                <Nav className="mr-auto" onClick={() => props.filterBy('Miscellaneous')}>
+                    <Button variant="link">Miscellaneous</Button>
                 </Nav>
             </Navbar>
         </>
-        )
-    }
+    )
 }
 
-export default CategoryNav
+
