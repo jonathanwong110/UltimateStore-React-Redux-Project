@@ -1,5 +1,6 @@
 import React from 'react';
-import { Nav, Navbar, Button } from 'react-bootstrap';
+import { Nav, Navbar } from 'react-bootstrap';
+import { Link } from 'react-router-dom'
 
 export default function CategoryNav(props) {
 
@@ -7,16 +8,16 @@ export default function CategoryNav(props) {
         <>
             <Navbar collapseOnSelect>
                 <Nav className="mr-auto" onClick={() => props.filterBy('')}>
-                    <Button variant="link">All</Button>
+                    <Link to="/" exact> Apparel</Link>
                 </Nav>
                 <Nav className="mr-auto" onClick={() => props.filterBy('Apparel')}>
-                    <Button variant="link">Apparel</Button>
+                    <Link to="/products/apparel" exact> Apparel</Link>
                 </Nav>
                 <Nav className="mr-auto" onClick={() => props.filterBy('Electronics')}>
-                    <Button variant="link">Electronics</Button>
+                    <Link to="/products/electronics" exact> Electronics </Link>
                 </Nav>
                 <Nav className="mr-auto" onClick={() => props.filterBy('Miscellaneous')}>
-                    <Button variant="link">Miscellaneous</Button>
+                    <Link to="/products/miscellaneous" exact> Miscellaneous </Link>
                 </Nav>
             </Navbar>
         </>
