@@ -18,7 +18,6 @@ class ProductInput extends Component {
     this.setState({
         [e.target.name]: e.target.value
     });
-    console.log('e.target.value', e.target.value)
   }
 
   handleCategoryChange = (e) => {
@@ -42,8 +41,7 @@ class ProductInput extends Component {
 
   render() {
     return (
-      <form onSubmit={e => this.handleSubmit(e)}>
-        <Form>
+        <Form onSubmit={e => this.handleSubmit(e)}>
           Create a Product!
           <br></br>
           <br></br>
@@ -84,7 +82,6 @@ class ProductInput extends Component {
           <br></br>
           <br></br>
         </Form>
-      </form>
     );
   }
 };
