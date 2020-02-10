@@ -7,7 +7,7 @@ export default function manageProducts (state = {
                 ...state,
                 products: [...state.products]
         }
-        case 'PRODUCTS_FETCHED':
+        case 'PRODUCTS_LOADED':
             return {
                 ...state,
                 products: action.products

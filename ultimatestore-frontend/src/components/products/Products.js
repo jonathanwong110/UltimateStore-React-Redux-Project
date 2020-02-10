@@ -16,7 +16,7 @@ class Products extends Component {
   }
 
   componentDidMount() {
-    this.props.fetchProducts()
+    this.props.loadProducts()
   }
 
   handleChange = (e) => {

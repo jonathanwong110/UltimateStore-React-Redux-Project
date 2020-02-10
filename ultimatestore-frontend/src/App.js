@@ -6,7 +6,7 @@ import CartContainer from './containers/CartContainer'
 import MainNav from './components/navigation/MainNav'
 import { connect } from 'react-redux'
 import { addToCart } from './actions/cartActions'
-import { fetchProducts, deleteProduct, addProduct } from './actions/productsActions'
+import { loadProducts, deleteProduct, addProduct } from './actions/productsActions'
 
 class App extends React.Component {
 
@@ -37,7 +37,7 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
   return {
-    fetchProducts: () => dispatch(fetchProducts()),
+    loadProducts: () => dispatch(loadProducts()),
     addProduct: (product) => dispatch(addProduct(product)),
     deleteProduct: (id) => dispatch(deleteProduct(id)),
     addToCart: (product) => dispatch(addToCart(product)),

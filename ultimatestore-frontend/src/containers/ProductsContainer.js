@@ -35,7 +35,7 @@ class ProductsContainer extends Component {
         </Row>
         <Row>
           <Col>
-            <Products filterBy={this.state.filterBy} fetchProducts={this.props.fetchProducts} products={this.props.products} deleteProduct={this.props.deleteProduct} addToCart={this.props.addToCart}/>
+            <Products filterBy={this.state.filterBy} loadProducts={this.props.loadProducts} products={this.props.products} deleteProduct={this.props.deleteProduct} addToCart={this.props.addToCart}/>
           </Col>
         </Row>
       </Container>
