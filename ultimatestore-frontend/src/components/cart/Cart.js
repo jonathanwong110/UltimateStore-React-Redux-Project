@@ -1,7 +1,6 @@
 import React from 'react';
 import { Navbar, Table } from 'react-bootstrap';
 import CartProduct from './CartProduct'
-import { removeFromCart} from '../../actions/cartActions'
 
 export default function Cart(props) {
 
@@ -25,7 +24,7 @@ export default function Cart(props) {
             <tbody>
                 {cart.map(product => {
                     return (
-                    <CartProduct key={product[0]} cartProduct={product} removeFromCart={removeFromCart}/>
+                    <CartProduct key={product[0]} cartProduct={product} removeFromCart={props.removeFromCart}/>
                             )
                         }
                     )

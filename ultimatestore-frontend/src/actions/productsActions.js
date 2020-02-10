@@ -6,7 +6,6 @@ export const fetchProducts = () => {
   return (dispatch) => {
     dispatch({ type: 'LOADING_PRODUCTS'})
     axios.get(baseURL).then(res => {
-      console.log('res', res)
       dispatch({ type: 'PRODUCTS_FETCHED', products: res.data })
       
     }
