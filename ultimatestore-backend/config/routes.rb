@@ -3,10 +3,11 @@ Rails.application.routes.draw do
   namespace :api do
     namespace :v1 do
 
-      get 'products/search/:q' => 'products#search'
+      get '/cart' => 'carts#show', as: 'carts'
 
       resources :products
       resources :reviews
+      resources :cart, only: [:show, :destroy]
     end
   end
 end

@@ -2,6 +2,11 @@ export default function manageCart (state = {
     cart: []
 }, action) {
     switch (action.type) {
+        case 'LOADING_CART':
+            return {
+                ...state,
+                cart: [...state.cart]
+        }
         case 'ADD_TO_CART':
             let addedProduct = Object.values(action.payload)
             return {

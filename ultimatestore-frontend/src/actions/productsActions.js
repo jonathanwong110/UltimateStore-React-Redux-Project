@@ -1,4 +1,4 @@
-import axios from "axios"
+import axios from 'axios'
 
 const baseURL = 'http://localhost:3000/api/v1/products/'
 
@@ -7,8 +7,7 @@ export const loadProducts = () => {
     dispatch({ type: 'LOADING_PRODUCTS'})
     axios.get(baseURL).then(res => {
       dispatch({ type: 'PRODUCTS_LOADED', products: res.data })
-      
-    }
+      }
     )
   }
 }
