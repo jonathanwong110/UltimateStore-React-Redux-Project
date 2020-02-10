@@ -28,7 +28,6 @@ class ProductInput extends Component {
   handleSubmit = (e) => {
     e.preventDefault();
     const newProduct = {...this.state}
-    this.props.addProduct(newProduct)
     this.setState({
         title: '',
         price: '',
@@ -36,6 +35,7 @@ class ProductInput extends Component {
         image: '',
         category: ''
     });
+    this.props.addProduct(newProduct)
   }
 
   render() {

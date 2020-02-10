@@ -1,5 +1,3 @@
-import uuid from 'uuid'
-
 export default function manageProducts (state = {
     products: []
 }, action) {
@@ -15,12 +13,8 @@ export default function manageProducts (state = {
                 products: action.products
         }
         case 'ADD_PRODUCT':
-            const product = {
-                id: uuid(),
-                product: action.product
-            }
             return {
-                ...state, products: [...state.products, product]
+                ...state, products: [...state.products, action.product]
         }
         case 'DELETE_PRODUCT':
             return {

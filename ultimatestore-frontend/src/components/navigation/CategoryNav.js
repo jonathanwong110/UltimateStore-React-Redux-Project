@@ -8,16 +8,16 @@ export default function CategoryNav(props) {
         <>
             <Navbar collapseOnSelect>
                 <Nav className="mr-auto" onClick={() => props.filterBy('')}>
-                    <Link to="/" exact> Apparel</Link>
+                    <Link to="/"> All </Link>
                 </Nav>
                 <Nav className="mr-auto" onClick={() => props.filterBy('Apparel')}>
-                    <Link to="/products/apparel" exact> Apparel</Link>
+                    <Link to="/products/apparel"> Apparel</Link>
                 </Nav>
                 <Nav className="mr-auto" onClick={() => props.filterBy('Electronics')}>
-                    <Link to="/products/electronics" exact> Electronics </Link>
+                    <Link to="/products/electronics"> Electronics </Link>
                 </Nav>
                 <Nav className="mr-auto" onClick={() => props.filterBy('Miscellaneous')}>
-                    <Link to="/products/miscellaneous" exact> Miscellaneous </Link>
+                    <Link to="/products/miscellaneous"> Miscellaneous </Link>
                 </Nav>
             </Navbar>
         </>

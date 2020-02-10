@@ -9,13 +9,13 @@ class MainNav extends Component {
     return (
       <>
         <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
-          <Link to="/">UltimateStore</Link>
+          <Link to="/" className="white-logo">UltimateStore</Link>
           <Navbar.Toggle aria-controls="responsive-navbar-nav" />
           <Navbar.Collapse id="responsive-navbar-nav">
             <Nav className="mr-auto">
             </Nav>
             <Nav>
-            <Link to="/cart">Cart</Link>
+            <Link to="/cart" className="white-logo">Cart</Link>
             </Nav>
           </Navbar.Collapse>
         </Navbar>
