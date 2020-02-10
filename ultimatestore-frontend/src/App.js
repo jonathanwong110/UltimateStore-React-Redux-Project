@@ -5,7 +5,8 @@ import ProductsContainer from './containers/ProductsContainer'
 import CartContainer from './containers/CartContainer'
 import MainNav from './components/navigation/MainNav'
 import { connect } from 'react-redux'
-import { loadCart, addToCart } from './actions/cartActions'
+import { loadCart } from './actions/cartActions'
+import { addToCart } from './actions/cartProductsActions'
 import { loadProducts, deleteProduct, addProduct } from './actions/productsActions'
 
 class App extends React.Component {
