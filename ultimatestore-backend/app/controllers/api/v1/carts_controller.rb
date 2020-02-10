@@ -2,10 +2,10 @@ class Api::V1::CartsController < ApplicationController
   before_action :set_cart, only: [:show, :update, :destroy]
 
   def show
-    if Cart.all.length == 0
-      @cart = Cart.create!
+    if Cart.all.length < 1
+      @cart = Cart.create!(cart_params)
+      render json: @cart
     end
-    render json: @cart
   end
 
   def destroy

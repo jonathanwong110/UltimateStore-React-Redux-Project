@@ -5,8 +5,7 @@ import ProductsContainer from './containers/ProductsContainer'
 import CartContainer from './containers/CartContainer'
 import MainNav from './components/navigation/MainNav'
 import { connect } from 'react-redux'
-import { loadCart } from './actions/cartActions'
-import { addToCart } from './actions/cartProductsActions'
+import { addToCart } from './actions/cartActions'
 import { loadProducts, deleteProduct, addProduct } from './actions/productsActions'
 
 class App extends React.Component {
@@ -39,7 +38,7 @@ const mapStateToProps = state => {
 const mapDispatchToProps = dispatch => {
   return {
     loadProducts: () => dispatch(loadProducts()),
-    loadCart: (id) => dispatch(loadCart(id)),
+    // loadCart: (id) => dispatch(loadCart(id)),
     addProduct: (product) => dispatch(addProduct(product)),
     deleteProduct: (id) => dispatch(deleteProduct(id)),
     addToCart: (product) => dispatch(addToCart(product)),

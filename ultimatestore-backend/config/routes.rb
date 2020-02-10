@@ -4,11 +4,11 @@ Rails.application.routes.draw do
   namespace :api do
     namespace :v1 do
 
-      get '/cart' => 'carts#show', as: 'carts'
+      get '/cart' => 'carts#show', as: 'api/v1/carts'
 
       resources :products
       resources :reviews
-      resources :cart, only: [:show, :destroy]
+      resources :carts, only: [:show, :destroy]
       resources :cartproducts, only: [:show]
     end
   end
