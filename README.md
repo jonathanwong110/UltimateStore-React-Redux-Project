@@ -1,6 +1,6 @@
 # UltimateStore-React-Redux-Project
 
-UltimateStore is a platform where users can post products for sale while viewing other posted products and see their reviews.
+UltimateStore is a platform where users can post products for sale while viewing other posted products and see their reviews. (Branch to test out LocalStorage)
 
 ## Installation
 
