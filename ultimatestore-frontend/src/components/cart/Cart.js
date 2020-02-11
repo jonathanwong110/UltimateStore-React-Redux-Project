@@ -4,8 +4,8 @@ import CartProduct from './CartProduct'
 
 export default function Cart(props) {
 
-    let storedCart = JSON.parse(localStorage.cartproducts).cart
-    
+    const { cart } = props
+
     return (
         <>
         <br></br>
@@ -24,7 +24,7 @@ export default function Cart(props) {
                     </tr>
                 </thead>
                 <tbody>
-                    {storedCart.map(product => {
+                    {cart.map(product => {
                         return (
                         <CartProduct key={product[0]} cartProduct={product} removeFromCart={props.removeFromCart}/>
                                 )
