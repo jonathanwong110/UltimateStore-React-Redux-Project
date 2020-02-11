@@ -21,14 +21,6 @@ class Api::V1::ProductsController < ApplicationController
     end
   end
 
-  def update
-    if @product.update(product_params)
-      render json: @product, status: 200
-    else
-      render json: @product.errors, status: :unprocessable_entity
-    end
-  end
-
   def destroy
     @product.destroy
     render json: @product, status: 200

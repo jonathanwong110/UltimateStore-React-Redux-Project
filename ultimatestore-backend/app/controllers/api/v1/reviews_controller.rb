@@ -11,24 +11,6 @@ class Api::V1::ReviewsController < ApplicationController
     render json: @review, status: 200
   end
 
-  def create
-    @review = Review.new(review_params)
-
-    if @review.save
-      render json: @review, status: 200, location: @review
-    else
-      render json: @review.errors, status: :unprocessable_entity
-    end
-  end
-
-  def update
-    if @review.update(review_params)
-      render json: @review, status: 200
-    else
-      render json: @review.errors, status: :unprocessable_entity
-    end
-  end
-
   def destroy
     @review = Review.find(params[:id])
     @review.destroy
