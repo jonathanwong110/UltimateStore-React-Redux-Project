@@ -1,5 +1,5 @@
 class Api::V1::ProductsController < ApplicationController
-  before_action :set_product, only: [:show, :destroy]
+  before_action :set_product, only: [:show, :update, :destroy]
 
   def index
     @products = Product.all
@@ -15,6 +15,14 @@ class Api::V1::ProductsController < ApplicationController
     @product = Product.new(product_params)
     
     if @product.save
+      render json: @product, status: 200
+    else
+      render json: @product.errors, status: :unprocessable_entity
+    end
+  end
+
+  def update
+    if @product.update(product_params)
       render json: @product, status: 200
     else
       render json: @product.errors, status: :unprocessable_entity

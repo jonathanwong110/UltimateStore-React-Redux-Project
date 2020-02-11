@@ -8,7 +8,7 @@ class CartContainer extends Component {
   render() {
     return (
       <div>
-        <Cart cart={this.props.cart} removeFromCart={this.props.removeFromCart}/>
+        <Cart cart={this.props.cart} loadCart={this.props.loadCart} removeFromCart={this.props.removeFromCart}/>
       </div>
     )
   }
@@ -25,5 +25,6 @@ const mapDispatchToProps = dispatch => {
     removeFromCart: (id) => dispatch(removeFromCart(id))
   }
 }
+
 
 export default connect(mapStateToProps, mapDispatchToProps)(CartContainer)
