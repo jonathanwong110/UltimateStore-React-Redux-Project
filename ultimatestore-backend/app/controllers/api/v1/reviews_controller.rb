@@ -21,6 +21,20 @@ class Api::V1::ReviewsController < ApplicationController
     end
   end
 
+  def update
+    if @review.update(review_params)
+      render json: @review, status: 200
+    else
+      render json: @review.errors, status: :unprocessable_entity
+    end
+  end
+
+  def destroy
+    @review = Review.find(params[:id])
+    @review.destroy
+    render json: @review, status: 200
+  end
+
   private
     def set_review
       @review = Review.find(params[:id])
