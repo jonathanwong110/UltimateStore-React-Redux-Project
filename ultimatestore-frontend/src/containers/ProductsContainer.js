@@ -4,11 +4,13 @@ import ProductInput from '../components/products/ProductInput'
 import { connect } from 'react-redux'
 import CategoryNav from '../components/navigation/CategoryNav'
 import { Container, Row, Col } from 'react-bootstrap'
+import { addToCart } from '../actions/cartActions'
+import { loadProducts, deleteProduct, addProduct } from '../actions/productsActions'
 
 class ProductsContainer extends Component {
 
-  constructor(props) {
-    super(props)
+  constructor() {
+    super()
     this.state = {
       filterBy: ""
     }
@@ -48,6 +50,15 @@ const mapStateToProps = state => {
     products: state.products.products,
   }
 }
+
+const mapDispatchToProps = dispatch => {
+  return {
+    loadProducts: () => dispatch(loadProducts()),
+    addProduct: (product) => dispatch(addProduct(product)),
+    deleteProduct: (id) => dispatch(deleteProduct(id)),
+    addToCart: (product) => dispatch(addToCart(product)),
+  }
+}
   
 
-export default connect(mapStateToProps)(ProductsContainer)
+export default connect(mapStateToProps, mapDispatchToProps)(ProductsContainer)

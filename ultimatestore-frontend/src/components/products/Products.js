@@ -5,9 +5,8 @@ import SearchProducts from './SearchProducts'
 
 class Products extends Component {
 
-  constructor(props) {
-    super(props);
-    
+  constructor() {
+    super();
     this.state = {
       searchEntry: '',
       searchQuery: '',
