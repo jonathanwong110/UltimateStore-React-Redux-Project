@@ -34,7 +34,7 @@ class ProductInput extends Component {
         price: '',
         description: '',
         image: '',
-        category: ''
+        category: 'Apparel'
     });
     this.props.addProduct(newProduct)
   }
@@ -68,6 +68,7 @@ class ProductInput extends Component {
 
             <Form.Group as={Col} controlId="formGridCategory">
               <Form.Label>Category: </Form.Label>
+              <br></br>
               <select type="select" onChange={e => this.handleCategoryChange(e)} value={this.state.category}>
                 <option value="Apparel">Apparel</option>
                 <option value="Electronics">Electronics</option>

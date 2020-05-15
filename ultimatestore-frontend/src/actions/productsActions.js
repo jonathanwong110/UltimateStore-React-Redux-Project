@@ -6,6 +6,7 @@ export const loadProducts = () => {
   return (dispatch) => {
     dispatch({ type: 'LOADING_PRODUCTS'})
     axios.get(baseURL).then(res => {
+      console.log('d')
       dispatch({ type: 'PRODUCTS_LOADED', products: res.data })
       }
     )
